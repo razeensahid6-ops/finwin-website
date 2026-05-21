@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aureus University School of Medicine - Finwin Edu Campus</title>
+  <meta name="description" content="Aureus University School of Medicine pathway through Finwin Edu Campus, including the Pre-Medical Programme and Doctor of Medicine progression." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f8f3e7;
+      --paper: #fffdf8;
+      --ink: #123039;
+      --muted: #647477;
+      --teal: #174c55;
+      --teal-dark: #0f343a;
+      --amber: #d9a23b;
+      --amber-soft: #f4d996;
+      --border: rgba(18, 48, 57, 0.14);
+      --shadow: 0 30px 80px rgba(23, 76, 85, 0.22);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(217, 162, 59, 0.26), transparent 32rem),
+        radial-gradient(circle at 88% 6%, rgba(23, 76, 85, 0.2), transparent 31rem),
+        linear-gradient(180deg, var(--cream), #fbf7ee 45%, #fffaf0);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; opacity: 0.18; pointer-events: none; background-image: radial-gradient(rgba(18, 48, 57, 0.2) 1px, transparent 1px); background-size: 4px 4px; mix-blend-mode: multiply; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .display { font-family: Fraunces, Georgia, serif; letter-spacing: -0.045em; line-height: 0.96; }
+    .display em { color: var(--teal); font-style: italic; }
+    .eyebrow { color: var(--amber); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 48px; border: 1px solid transparent; border-radius: 999px; padding: 0.9rem 1.25rem; font-size: 0.92rem; font-weight: 800; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fffaf0; background: var(--teal); box-shadow: var(--shadow); }
+    .btn-ghost { background: rgba(255, 253, 248, 0.74); border-color: var(--border); }
+
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border); background: rgba(248, 243, 231, 0.78); backdrop-filter: blur(16px); }
+    .nav-wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; line-height: 1; }
+    .brand-logo { width: 210px; max-width: 48vw; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-item { position: relative; }
+    .nav-links a, .nav-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 0.85rem; border: 0; border-radius: 999px; color: rgba(18, 48, 57, 0.72); background: transparent; font-size: 0.92rem; font-weight: 700; cursor: pointer; }
+    .nav-links a:hover, .nav-dropdown-toggle:hover, .nav-item.open .nav-dropdown-toggle, .nav-item:hover .nav-dropdown-toggle, .nav-item:focus-within .nav-dropdown-toggle, .nav-links a.active, .nav-dropdown-toggle.active { color: var(--ink); background: rgba(255, 253, 248, 0.92); }
+    .nav-dropdown { position: absolute; left: 0; top: 100%; z-index: 30; display: none; min-width: 290px; padding: 0.45rem; border: 1px solid var(--border); border-radius: 18px; background: rgba(255, 253, 248, 0.96); box-shadow: var(--shadow); }
+    .nav-item.open .nav-dropdown, .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display: grid; gap: 0.2rem; }
+    .nav-dropdown a { justify-content: flex-start; width: 100%; border-radius: 14px; white-space: nowrap; }
+    .menu-button { display: none; border: 1px solid var(--border); border-radius: 14px; padding: 0.65rem 0.8rem; color: var(--ink); background: var(--paper); font-weight: 800; }
+
+    section { padding: 96px 0; }
+    h2 { margin: 0.7rem 0 0; font-size: clamp(2.55rem, 5vw, 5rem); }
+    .lead { max-width: 760px; margin: 1.35rem 0 0; color: var(--muted); font-size: clamp(1.04rem, 2vw, 1.25rem); }
+    .landing-section { padding-top: 82px; }
+    .landing-panel { display: grid; grid-template-columns: repeat(2, minmax(300px, 1fr)); gap: 16px; align-items: stretch; max-width: 900px; margin: 28px 0 0; }
+    .feature-card, .module-card, .support-card, .path-step, .curriculum-table-wrap { padding: 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(255,253,248,0.82); box-shadow: 0 18px 42px rgba(18,48,57,0.06); }
+    .feature-card { min-height: 345px; display: grid; align-content: start; padding: 1rem; border-radius: 18px; }
+    .feature-card h3 { margin: 0.7rem 0 0.4rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.03; }
+    .feature-card p { margin: 0.9rem 0 0; }
+    .pathway-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+
+    .medical-moment { min-height: 345px; display: grid; justify-items: center; align-content: center; padding: 1rem; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,253,248,0.82); box-shadow: 0 18px 42px rgba(18,48,57,0.06); }
+    .aureus-logo { display: block; width: min(100%, 360px); height: auto; }
+    .medical-moment .logo-lead { width: min(100%, 420px); margin: 1rem 0 0; text-align: justify; text-justify: inter-word; hyphens: auto; }
+
+    .support-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .support-card h3, .module-card h3, .path-step h3 { margin: 0.65rem 0 0.75rem; font-size: clamp(1.55rem, 2.4vw, 2.2rem); line-height: 1.08; }
+    .journey-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .path-step { min-height: 285px; display: flex; flex-direction: column; }
+    .step-number { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 16px; color: var(--teal); background: rgba(217,162,59,0.2); font-size: 1.2rem; font-weight: 900; }
+    .year-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .year-card { min-height: 250px; }
+    .year-card h3 { margin: 0.7rem 0 0.65rem; font-size: clamp(1.65rem, 2.6vw, 2.35rem); line-height: 1.04; }
+    .programme-group { margin-top: 64px; }
+    .programme-group > h3 { margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1; letter-spacing: 0; }
+    .module-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .module-card { min-height: 360px; display: flex; flex-direction: column; }
+    .module-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--amber); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .module-list { margin: 0.9rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; color: var(--muted); font-size: 0.94rem; }
+    .module-list li { position: relative; padding-left: 1.05rem; }
+    .module-list li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+    .curriculum-table-wrap { margin-top: 34px; overflow-x: auto; }
+    .curriculum-year-title { margin: 0 0 1rem; color: var(--teal); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.05; }
+    .curriculum-table { width: 100%; min-width: 820px; table-layout: fixed; border-collapse: collapse; }
+    .curriculum-table col.semester-col { width: 150px; }
+    .curriculum-table col.code-col { width: 100px; }
+    .curriculum-table col.modules-col { width: auto; }
+    .curriculum-table col.credits-col { width: 110px; }
+    .curriculum-table th, .curriculum-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .curriculum-table th { color: var(--teal); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase; background: rgba(217,162,59,0.12); }
+    .curriculum-table tr:last-child td { border-bottom: 0; }
+    .curriculum-table td:first-child, .curriculum-table td:nth-child(2), .curriculum-table td:last-child { font-weight: 800; }
+    .curriculum-table td:first-child { color: var(--teal); }
+    .curriculum-table td:nth-child(2), .curriculum-table th:nth-child(2) { text-align: left; }
+    .curriculum-table td:last-child, .curriculum-table th:last-child { color: var(--amber); text-align: center; white-space: nowrap; }
+    .curriculum-table ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+    .curriculum-table li + li { margin-top: 0.35rem; }
+
+    .site-footer { margin-top: 96px; color: #fffaf0; background: linear-gradient(135deg, var(--teal-dark), var(--teal)); }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.55fr) minmax(180px, 0.55fr); gap: 46px; padding: 70px 0; }
+    .footer-title { font-family: Arial, Helvetica, sans-serif; font-size: clamp(2.3rem, 5vw, 4.4rem); letter-spacing: 0; line-height: 1; }
+    .footer-links { display: contents; }
+    .footer-links h4 { margin: 0 0 1.1rem; color: var(--amber-soft); font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-links p, .footer-links a { display: block; margin: 0.8rem 0; color: rgba(255, 250, 240, 0.72); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 800; }
+    .copyright { display: flex; justify-content: space-between; gap: 1rem; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255, 250, 240, 0.62); font-size: 0.78rem; }
+
+    @media (max-width: 900px) {
+      .landing-panel, .support-grid, .journey-grid, .year-grid, .module-grid, .footer-grid { grid-template-columns: 1fr; }
+      .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .medical-moment { min-height: 345px; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .menu-button { display: inline-flex; }
+      .nav-links { position: absolute; inset: 72px 14px auto; display: none; flex-direction: column; align-items: stretch; padding: 0.8rem; border: 1px solid var(--border); border-radius: 22px; background: rgba(255, 253, 248, 0.96); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a, .nav-dropdown-toggle { justify-content: flex-start; width: 100%; padding: 0.9rem 1rem; }
+      .nav-item { width: 100%; }
+      .nav-dropdown { position: static; min-width: 0; margin: 0.2rem 0 0.35rem; box-shadow: none; }
+      .nav-cta { display: none; }
+      section { padding: 70px 0; }
+      .support-grid, .year-grid, .footer-links { grid-template-columns: 1fr; }
+      .medical-moment { min-height: 345px; }
+      .copyright { flex-direction: column; }
+    }
+      /* Consistent site typography */
+    h1, h2, h3, h4, h5, h6,
+    .display,
+    .footer-title,
+    .quote strong,
+    .moment-caption strong,
+    .value-body strong,
+    .route-point strong,
+    .route-badge strong {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 24px !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0 !important;
+    }
+
+    p,
+    .lead,
+    .article-body p,
+    .article-preview p,
+    .summary-card p,
+    .story-card p,
+    .value-body p,
+    .pillar-item p,
+    .footer-links p {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 20px !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0 !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+    }
+    b,
+    strong {
+      font-size: 20px !important;
+      line-height: inherit !important;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Finwin Edu Campus home">
+        <img class="brand-logo" src="https://finwincampus.com/wp-content/uploads/2024/01/image-1.png" alt="Finwin Edu Campus">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-item has-dropdown"><button class="nav-dropdown-toggle active" id="programmesToggle" type="button" aria-expanded="false">Programmes</button><div class="nav-dropdown" aria-label="Programmes submenu"><a href="iic.html">IIC University of Technology</a><a href="tvec.html">TVEC</a><a href="qualifi.html">Qualifi</a><a href="aureus.html">Aureus University School of Medicine</a><a href="finwin-courses.html">FINWIN Courses</a></div></div>
+        <a href="articles.html">News And Articles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="contact.html">Apply now -&gt;</a>
+      <button class="menu-button" id="menuButton" type="button" aria-controls="navLinks" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="landing-section" id="aureus">
+      <div class="container">
+        <div class="eyebrow">Aureus University School of Medicine</div>
+        <h2 class="display">Pathway to global medical excellence through <em>Finwin Edu Campus.</em></h2>
+
+        <div class="landing-panel">
+          <article class="feature-card">
+            <div class="eyebrow">Medical pathway</div>
+            <h3>From Pre-Med foundations to the MD journey.</h3>
+            <p class="muted">Students can begin with an approximately one-year Pre-Medical Programme at Finwin Edu Campus before progressing to the Doctor of Medicine programme at Aureus University in Oranjestad, Aruba.</p>
+            <div class="pathway-actions">
+              <a class="btn btn-primary" href="#premed-modules">Explore modules -&gt;</a>
+              <a class="btn btn-ghost" href="contact.html">Ask about Aureus -&gt;</a>
+            </div>
+          </article>
+          <div class="medical-moment">
+            <img class="aureus-logo" src="ss/Aureus-University-School-of-Medicine2.png" alt="Aureus University School of Medicine - Set your sights on a bold new horizon">
+            <p class="lead logo-lead">Finwin Edu Campus, in collaboration with Aureus University School of Medicine, offers aspiring students a structured pathway toward the Doctor of Medicine qualification.</p>
+          </div>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <div class="eyebrow">Entry route</div>
+            <h3>O/L science foundation</h3>
+            <p class="muted">Students who have completed GCE Ordinary Level with credit passes in English Language, Biology, Physics, Chemistry, and Mathematics may enroll in the Pre-Medical Programme.</p>
+          </article>
+          <article class="support-card">
+            <div class="eyebrow">Progression</div>
+            <h3>Doctor of Medicine</h3>
+            <p class="muted">After successful completion of the foundation programme, students may continue into the Doctor of Medicine degree programme at Aureus University.</p>
+          </article>
+          <article class="support-card">
+            <div class="eyebrow">Clinical exposure</div>
+            <h3>USA and Canada links</h3>
+            <p class="muted">The MD pathway includes pre-clinical sciences, USMLE preparation, and clinical rotations in affiliated hospitals in the United States and Canada.</p>
+          </article>
+        </div>
+
+        <div class="programme-group">
+          <div class="eyebrow">Journey structure</div>
+          <h3>From ambition to achievement</h3>
+          <div class="journey-grid">
+            <article class="path-step">
+              <div class="step-number">1</div>
+              <h3>Pre-Medical Programme</h3>
+              <p class="muted">Build academic readiness in biology, chemistry, physics, anatomy, physiology, psychology, and medical terminology through Finwin Edu Campus.</p>
+            </article>
+            <article class="path-step">
+              <div class="step-number">2</div>
+              <h3>MD at Aureus University</h3>
+              <p class="muted">Progress to the Doctor of Medicine programme at Aureus University School of Medicine in Oranjestad, Aruba.</p>
+            </article>
+            <article class="path-step">
+              <div class="step-number">3</div>
+              <h3>Clinical and licensing preparation</h3>
+              <p class="muted">Continue through pre-clinical sciences, USMLE preparation, and clinical rotations connected to the USA and Canada.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="programme-group" id="premed-modules">
+          <div class="eyebrow">Pre-Medical Programme modules</div>
+          <h3>Three-semester foundation pathway</h3>
+          <div class="module-grid">
+            <article class="module-card">
+              <div class="module-meta"><span>1st Semester</span><span>Pre-Med 1</span></div>
+              <h3>Laying the Foundation</h3>
+              <ul class="module-list">
+                <li>English 1</li>
+                <li>Biology 1</li>
+                <li>Organic Chemistry 1</li>
+                <li>General Chemistry 1</li>
+                <li>Physics 1</li>
+                <li>Mathematics 1</li>
+              </ul>
+            </article>
+            <article class="module-card">
+              <div class="module-meta"><span>2nd Semester</span><span>Pre-Med 2</span></div>
+              <h3>Deepening Your Knowledge</h3>
+              <ul class="module-list">
+                <li>English 2</li>
+                <li>Biology 2</li>
+                <li>Organic Chemistry 2</li>
+                <li>General Chemistry 2</li>
+                <li>Physics 2</li>
+                <li>Mathematics 2</li>
+              </ul>
+            </article>
+            <article class="module-card">
+              <div class="module-meta"><span>3rd Semester</span><span>Pre-Med 3</span></div>
+              <h3>Bridging to Medical School</h3>
+              <ul class="module-list">
+                <li>Introduction to Anatomy</li>
+                <li>Introduction to Histology</li>
+                <li>Introduction to Biochemistry</li>
+                <li>Introduction to Physiology</li>
+                <li>Introduction to Psychology</li>
+                <li>Medical Terminology</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="programme-group" id="md-curriculum">
+          <div class="eyebrow">Doctor of Medicine curriculum</div>
+          <h3>MD programme details</h3>
+          <div class="year-grid">
+            <article class="support-card year-card">
+              <div class="eyebrow">Year 2</div>
+              <h3>Core medical sciences</h3>
+              <p class="muted">MD1 to MD3 cover immunology, nutrition, research, ethics, organ systems, and early practice of medicine modules.</p>
+            </article>
+            <article class="support-card year-card">
+              <div class="eyebrow">Year 3</div>
+              <h3>Advanced systems and USMLE preparation</h3>
+              <p class="muted">MD4 to MD6 focus on nervous, renal, gastrointestinal, and hepatobiliary systems, followed by USMLE Step 1 preparation and transition to clinical sciences.</p>
+            </article>
+            <article class="support-card year-card">
+              <div class="eyebrow">Year 4</div>
+              <h3>Clinical rotations</h3>
+              <p class="muted">MD7 to MD9 include internal medicine, family medicine, general surgery, obstetrics and gynaecology, paediatrics, psychiatry, and clinical skills development.</p>
+            </article>
+            <article class="support-card year-card">
+              <div class="eyebrow">Year 5</div>
+              <h3>Advanced clinical completion</h3>
+              <p class="muted">MD10 to MD12 include elective and advanced clinical rotations, diagnostic medicine, emergency medicine, residency preparation, final clinical assessment, research, and graduation preparation.</p>
+            </article>
+          </div>
+          <div class="curriculum-table-wrap">
+            <h4 class="curriculum-year-title">Year 2</h4>
+            <table class="curriculum-table">
+              <colgroup>
+                <col class="semester-col">
+                <col class="code-col">
+                <col class="modules-col">
+                <col class="credits-col">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Semester</th>
+                  <th>Code</th>
+                  <th>Subjects / Modules</th>
+                  <th>Credits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semester 1</td>
+                  <td>MD1</td>
+                  <td>
+                    <ul>
+                      <li>Fundamental Concepts Immunology</li>
+                      <li>Nutrition</li>
+                      <li>Biostatistics &amp; Research</li>
+                      <li>Ethics</li>
+                    </ul>
+                  </td>
+                  <td>27</td>
+                </tr>
+                <tr>
+                  <td>Semester 2</td>
+                  <td>MD2</td>
+                  <td>
+                    <ul>
+                      <li>Practice of Medicine 1</li>
+                      <li>Skin &amp; Musculoskeletal System</li>
+                      <li>Endocrine System</li>
+                      <li>Reproductive System</li>
+                      <li>Practice of Medicine 2</li>
+                    </ul>
+                  </td>
+                  <td>33</td>
+                </tr>
+                <tr>
+                  <td>Semester 3</td>
+                  <td>MD3</td>
+                  <td>
+                    <ul>
+                      <li>Hematopoietic &amp; Lymphatic Systems</li>
+                      <li>Cardiovascular System</li>
+                      <li>Respiratory System</li>
+                      <li>Practice of Medicine 3</li>
+                    </ul>
+                  </td>
+                  <td>30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="curriculum-table-wrap">
+            <h4 class="curriculum-year-title">Year 3</h4>
+            <table class="curriculum-table">
+              <colgroup>
+                <col class="semester-col">
+                <col class="code-col">
+                <col class="modules-col">
+                <col class="credits-col">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Semester</th>
+                  <th>Code</th>
+                  <th>Subjects / Modules</th>
+                  <th>Credits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semester 1</td>
+                  <td>MD4</td>
+                  <td>
+                    <ul>
+                      <li>Nervous System &amp; Behavioural Science</li>
+                      <li>Renal System</li>
+                      <li>Gastrointestinal &amp; Hepatobiliary System</li>
+                    </ul>
+                  </td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>Semester 2</td>
+                  <td>MD5</td>
+                  <td>
+                    <ul>
+                      <li>Gastrointestinal &amp; Hepatobiliary System</li>
+                      <li>Comprehensive Basic Science Review</li>
+                      <li>Practice of Medicine 5</li>
+                    </ul>
+                  </td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>Semester 3</td>
+                  <td>MD6</td>
+                  <td>United States Medical Licensing Examination (USMLE) Step 1 Preparation &amp; Transition to Clinical Sciences</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="curriculum-table-wrap">
+            <h4 class="curriculum-year-title">Year 4</h4>
+            <table class="curriculum-table">
+              <colgroup>
+                <col class="semester-col">
+                <col class="code-col">
+                <col class="modules-col">
+                <col class="credits-col">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Semester</th>
+                  <th>Code</th>
+                  <th>Subjects / Modules</th>
+                  <th>Credits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semester 1</td>
+                  <td>MD7</td>
+                  <td>
+                    <ul>
+                      <li>Internal Medicine Rotation</li>
+                      <li>Family Medicine</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Semester 2</td>
+                  <td>MD8</td>
+                  <td>
+                    <ul>
+                      <li>General Surgery Rotation</li>
+                      <li>Obstetrics &amp; Gynaecology</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Semester 3</td>
+                  <td>MD9</td>
+                  <td>
+                    <ul>
+                      <li>Paediatrics</li>
+                      <li>Psychiatry</li>
+                      <li>Clinical Skills Development</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="curriculum-table-wrap">
+            <h4 class="curriculum-year-title">Year 5</h4>
+            <table class="curriculum-table">
+              <colgroup>
+                <col class="semester-col">
+                <col class="code-col">
+                <col class="modules-col">
+                <col class="credits-col">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Semester</th>
+                  <th>Code</th>
+                  <th>Subjects / Modules</th>
+                  <th>Credits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semester 1</td>
+                  <td>MD10</td>
+                  <td>
+                    <ul>
+                      <li>Elective Clinical Rotations</li>
+                      <li>Diagnostic Medicine</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Semester 2</td>
+                  <td>MD11</td>
+                  <td>
+                    <ul>
+                      <li>Advanced Clinical Rotations</li>
+                      <li>Emergency Medicine</li>
+                      <li>Residency Preparation</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Semester 3</td>
+                  <td>MD12</td>
+                  <td>
+                    <ul>
+                      <li>Final Clinical Assessment</li>
+                      <li>Research Project</li>
+                      <li>Graduation Preparation</li>
+                    </ul>
+                  </td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="footer-title">Quality <em style="color:var(--amber-soft); font-style:normal;">uncompromised.</em><br>Futures unlocked.</div><p style="color:rgba(255,250,240,0.72); max-width:460px;">Finwin Edu Campus - accredited excellence in higher learning, based in Sri Lanka with global pathways.</p><a class="btn" style="background:var(--amber-soft); color:var(--teal-dark);" href="contact.html">Start your application -&gt;</a></div>
+      <div class="footer-links">
+        <div class="footer-segment"><h4>Quick Links</h4><a href="https://studyportal.finwincampus.ae/learn/account/signin">Student Portal</a><a href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=Finwin+Edu+Campus,+No.+1094,+Maradana+Road,+Borella,+Colombo+08,+Sri+Lanka&travelmode=driving">Map</a><a href="https://www.finwin.education/">Finwin Campus - UAE</a></div><div class="footer-segment"><h4>Social Media</h4><a href="https://www.facebook.com/share/17UNkwbhQN/?mibextid=wwXIfr">Facebook</a><a href="https://www.linkedin.com/company/finwin-edu-campus/">LinkedIn</a><a href="https://www.instagram.com/finwin_edu_campus?igsh=MTAyZTY0bmh5MDd4eA==">Instagram</a></div>
+      </div>
+    </div>
+    <div class="container copyright"><span>&copy; <span id="year"></span> Finwin Edu Campus. All rights reserved.</span><span>Copyright www.finwincampus.com</span></div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    const programmeDropdown = document.querySelector('.has-dropdown');
+    const programmeToggle = document.getElementById('programmesToggle');
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+    if (programmeDropdown && programmeToggle) {
+      programmeToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = programmeDropdown.classList.toggle('open');
+        programmeToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (event) => {
+        if (!programmeDropdown.contains(event.target)) {
+          programmeDropdown.classList.remove('open');
+          programmeToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    if (menuButton && navLinks) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.textContent = isOpen ? 'Close' : 'Menu';
+      });
+      navLinks.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+          if (programmeDropdown && programmeToggle) {
+            programmeDropdown.classList.remove('open');
+            programmeToggle.setAttribute('aria-expanded', 'false');
+          }
+          navLinks.classList.remove('open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.textContent = 'Menu';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

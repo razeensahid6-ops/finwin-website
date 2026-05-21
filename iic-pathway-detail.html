@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IIC Pathway Details - Finwin Edu Campus</title>
+  <meta name="description" content="IIC University of Technology pathway details at Finwin Edu Campus." />
+  <style>
+    :root {
+      --cream: #f8f3e7;
+      --paper: #fffdf8;
+      --ink: #123039;
+      --muted: #647477;
+      --teal: #174c55;
+      --teal-dark: #0f343a;
+      --amber: #d9a23b;
+      --amber-soft: #f4d996;
+      --border: rgba(18, 48, 57, 0.14);
+      --shadow: 0 30px 80px rgba(23, 76, 85, 0.22);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(217, 162, 59, 0.24), transparent 32rem),
+        radial-gradient(circle at 86% 2%, rgba(23, 76, 85, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--cream), #fbf7ee 45%, #fffaf0);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.18;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(18, 48, 57, 0.2) 1px, transparent 1px);
+      background-size: 4px 4px;
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { color: var(--amber); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; padding: 0.9rem 1.25rem; border: 1px solid transparent; font-weight: 800; }
+    .btn-primary { color: #fffaf0; background: var(--teal); box-shadow: var(--shadow); }
+    .btn-ghost { background: rgba(255,253,248,0.74); border-color: var(--border); }
+
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border); background: rgba(248,243,231,0.78); backdrop-filter: blur(16px); }
+    .nav-wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand-logo { width: 210px; max-width: 48vw; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-links a { padding: 0.65rem 0.85rem; border-radius: 999px; color: rgba(18,48,57,0.72); font-size: 0.92rem; font-weight: 700; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); background: rgba(255,253,248,0.86); }
+
+    main { padding: 82px 0 0; }
+    .detail-hero { display: grid; grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1.12fr); gap: 34px; align-items: stretch; }
+    .hero-copy { display: grid; align-content: center; }
+    h1 { margin: 0.9rem 0 0; max-width: 680px; font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 1.02; letter-spacing: 0; }
+    .lead { max-width: 660px; margin: 1.2rem 0 0; color: var(--muted); font-size: 14px; }
+    .hero-image { min-height: 420px; border-radius: 28px; border: 1px solid rgba(18,48,57,0.14); background: linear-gradient(180deg, rgba(15,52,58,0.04), rgba(15,52,58,0.28) 38%, rgba(15,52,58,0.95) 78%), var(--pathway-image) center / cover; box-shadow: var(--shadow); display: grid; align-content: end; padding: 1.5rem; color: #fffaf0; }
+    .hero-image strong { max-width: 640px; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; text-transform: uppercase; text-shadow: 0 3px 18px rgba(0,0,0,0.38); }
+    .detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 42px; }
+    .detail-card { padding: 1.5rem; border: 1px solid var(--border); border-radius: 24px; background: rgba(255,253,248,0.86); box-shadow: 0 18px 42px rgba(18,48,57,0.06); }
+    .detail-card h2 { margin: 0.65rem 0 0.5rem; font-size: 18px; }
+    .detail-card p, .detail-card li { color: var(--muted); font-size: 14px; }
+    .detail-card ul { display: grid; gap: 0.45rem; margin: 0.9rem 0 0; padding-left: 1.1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
+    .site-footer { margin-top: 96px; color: #fffaf0; background: linear-gradient(135deg, var(--teal-dark), var(--teal)); }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.55fr) minmax(180px, 0.55fr); gap: 46px; padding: 70px 0; }
+    .footer-title { font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; }
+    .footer-title em { color: var(--amber-soft); font-style: normal; }
+    .copyright { display: flex; justify-content: space-between; gap: 1rem; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255,250,240,0.62); font-size: 0.78rem; }
+
+    @media (max-width: 900px) {
+      .detail-hero, .detail-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-image { min-height: 340px; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav-links { display: none; }
+      main { padding-top: 56px; }
+      .copyright { flex-direction: column; }
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .footer-title,
+    .hero-image strong {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 24px !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0 !important;
+    }
+
+    p,
+    li,
+    .lead,
+    .detail-card p,
+    .detail-card li {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 20px !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0 !important;
+      text-align: justify !important;
+      text-justify: inter-word !important;
+      hyphens: auto !important;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Finwin Edu Campus home">
+        <img class="brand-logo" src="https://finwincampus.com/wp-content/uploads/2024/01/image-1.png" alt="Finwin Edu Campus">
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html" class="active">Programmes</a>
+        <a href="articles.html">News And Articles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container detail-hero">
+        <div class="hero-copy">
+          <a class="btn btn-ghost" href="iic.html#iic-degrees">Back to IIC pathways</a>
+          <div style="margin-top:2rem;" class="eyebrow" id="degreeType">IIC pathway</div>
+          <h1 id="pageTitle">IIC Pathway Details</h1>
+          <p class="lead" id="pageLead">Explore the pathway details, learning focus, and career direction for this IIC University of Technology programme.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="contact.html">Apply now -&gt;</a>
+            <a class="btn btn-ghost" href="iic.html">View all IIC programmes</a>
+          </div>
+        </div>
+        <div class="hero-image" id="heroImage" role="img" aria-label="Pathway image">
+          <strong id="heroTitle">IIC Pathway</strong>
+        </div>
+      </div>
+
+      <div class="container detail-grid">
+        <article class="detail-card">
+          <div class="eyebrow">Overview</div>
+          <h2>Pathway focus</h2>
+          <p id="overviewText"></p>
+        </article>
+        <article class="detail-card">
+          <div class="eyebrow">What you build</div>
+          <h2>Learning outcomes</h2>
+          <ul id="outcomesList"></ul>
+        </article>
+        <article class="detail-card">
+          <div class="eyebrow">Where it leads</div>
+          <h2>Career direction</h2>
+          <ul id="careerList"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">Quality <em>uncompromised.</em><br>Futures unlocked.</div>
+        <p style="color:rgba(255,250,240,0.72); max-width:460px;">Finwin Edu Campus - accredited excellence in higher learning, based in Sri Lanka with global pathways.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--amber-soft); letter-spacing:0.14em; text-transform:uppercase;">Quick Links</h4>
+        <a style="display:block; margin:0.8rem 0; color:rgba(255,250,240,0.72); font-weight:800;" href="https://studyportal.finwincampus.ae/learn/account/signin">Student Portal</a>
+        <a style="display:block; margin:0.8rem 0; color:rgba(255,250,240,0.72); font-weight:800;" href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=Finwin+Edu+Campus,+No.+1094,+Maradana+Road,+Borella,+Colombo+08,+Sri+Lanka&travelmode=driving">Map</a>
+      </div>
+      <div>
+        <h4 style="color:var(--amber-soft); letter-spacing:0.14em; text-transform:uppercase;">Social Media</h4>
+        <a style="display:block; margin:0.8rem 0; color:rgba(255,250,240,0.72); font-weight:800;" href="https://www.facebook.com/share/17UNkwbhQN/?mibextid=wwXIfr">Facebook</a>
+        <a style="display:block; margin:0.8rem 0; color:rgba(255,250,240,0.72); font-weight:800;" href="https://www.linkedin.com/company/finwin-edu-campus/">LinkedIn</a>
+        <a style="display:block; margin:0.8rem 0; color:rgba(255,250,240,0.72); font-weight:800;" href="https://www.instagram.com/finwin_edu_campus?igsh=MTAyZTY0bmh5MDd4eA==">Instagram</a>
+      </div>
+    </div>
+    <div class="container copyright"><span>&copy; <span id="year"></span> Finwin Edu Campus. All rights reserved.</span><span>Copyright www.finwincampus.com</span></div>
+  </footer>
+
+  <script>
+    const images = {
+      Management: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80',
+      Marketing: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+      'Human Resource Management': 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
+      'Tourism and Hospitality Management': 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+      'International Business': 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+      'Logistics and Supply Chain Management': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+      'Hotel Management': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+      'Accounting & Finance': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
+      'Banking & Finance': 'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1200&q=80',
+      'Information Technology': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+      'Digital Marketing': 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1200&q=80',
+      'Computer Science': 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
+      'Software Engineering': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+      'Mechanical Engineering': 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80',
+      Psychology: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80',
+      'Clinical Psychology': 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80',
+      Education: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
+      'English Business Communication': 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80',
+      Law: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80'
+    };
+
+    const details = {
+      business: {
+        overview: 'This pathway develops business judgement, commercial awareness, people skills, and decision-making ability for modern organisations.',
+        outcomes: ['Analyse business challenges with structured thinking', 'Build communication, leadership, and planning skills', 'Understand how organisations grow and compete'],
+        careers: ['Management trainee', 'Business development executive', 'Operations or administration officer']
+      },
+      finance: {
+        overview: 'This pathway focuses on financial information, banking, accounting practice, and decision-making for business and institutional environments.',
+        outcomes: ['Interpret financial data and reports', 'Understand finance, banking, and compliance basics', 'Support evidence-based commercial decisions'],
+        careers: ['Accounts executive', 'Banking officer', 'Finance assistant or analyst']
+      },
+      technology: {
+        overview: 'This pathway builds technical and analytical skills for students aiming at digital, computing, software, and engineering-focused careers.',
+        outcomes: ['Understand digital systems and technical workflows', 'Apply problem-solving to technology projects', 'Build confidence with industry-relevant tools and concepts'],
+        careers: ['IT support executive', 'Software or systems trainee', 'Digital technology coordinator']
+      },
+      social: {
+        overview: 'This pathway explores people, behaviour, society, and wellbeing, preparing students for human-centred professional environments.',
+        outcomes: ['Understand human behaviour and social contexts', 'Apply research-informed thinking', 'Develop ethical and empathetic professional judgement'],
+        careers: ['Psychology assistant pathway', 'Community support role', 'Human services coordinator']
+      },
+      education: {
+        overview: 'This pathway supports students interested in teaching, training, communication, curriculum, and learner development.',
+        outcomes: ['Develop learner-centred communication skills', 'Understand education practice and classroom support', 'Build confidence in academic and workplace communication'],
+        careers: ['Teaching assistant', 'Training coordinator', 'Education support officer']
+      },
+      law: {
+        overview: 'This pathway introduces legal thinking, governance, rights, duties, and structured argument for students pursuing law-related careers.',
+        outcomes: ['Develop legal reasoning and analytical writing', 'Understand legal systems and professional ethics', 'Build confidence in structured argument and research'],
+        careers: ['Legal assistant', 'Compliance support officer', 'Law pathway student']
+      }
+    };
+
+    function categoryFor(subject) {
+      if (['Accounting & Finance', 'Banking & Finance'].includes(subject)) return 'finance';
+      if (['Information Technology', 'Digital Marketing', 'Computer Science', 'Software Engineering', 'Mechanical Engineering'].includes(subject)) return 'technology';
+      if (['Psychology', 'Clinical Psychology'].includes(subject)) return 'social';
+      if (['Education', 'English Business Communication'].includes(subject)) return 'education';
+      if (subject === 'Law') return 'law';
+      return 'business';
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const degree = params.get('degree') || 'IIC';
+    const subject = params.get('subject') || 'Pathway';
+    const category = details[categoryFor(subject)];
+    const title = `${degree} in ${subject}`;
+
+    document.title = `${title} - Finwin Edu Campus`;
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('degreeType').textContent = `${degree} pathway`;
+    document.getElementById('pageTitle').textContent = title;
+    document.getElementById('pageLead').textContent = `A focused IIC University of Technology pathway for students interested in ${subject.toLowerCase()}.`;
+    document.getElementById('heroTitle').textContent = title;
+    document.getElementById('heroImage').style.setProperty('--pathway-image', `url("${images[subject] || images.Management}")`);
+    document.getElementById('overviewText').textContent = category.overview;
+
+    const outcomesList = document.getElementById('outcomesList');
+    const careerList = document.getElementById('careerList');
+    category.outcomes.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      outcomesList.append(li);
+    });
+    category.careers.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      careerList.append(li);
+    });
+  </script>
+</body>
+</html>

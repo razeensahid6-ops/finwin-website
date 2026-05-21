@@ -1,0 +1,12 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local extraction/work files
+.docx_extract_*/
+codex_write_test.tmp
+
+# Logs and temporary files
+*.log
+*.tmp

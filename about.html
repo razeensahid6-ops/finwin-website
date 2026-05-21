@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Finwin Edu Campus</title>
+  <meta name="description" content="About Finwin Edu Campus, including the vision, mission, quality framework, values, and campus background." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --cream: #f8f3e7;
+      --paper: #fffdf8;
+      --ink: #123039;
+      --muted: #647477;
+      --teal: #174c55;
+      --teal-dark: #0f343a;
+      --amber: #d9a23b;
+      --amber-soft: #f4d996;
+      --border: rgba(18, 48, 57, 0.14);
+      --shadow: 0 30px 80px rgba(23, 76, 85, 0.22);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(217, 162, 59, 0.28), transparent 32rem),
+        radial-gradient(circle at 86% 2%, rgba(23, 76, 85, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--cream), #fbf7ee 45%, #fffaf0);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.18;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(18, 48, 57, 0.2) 1px, transparent 1px);
+      background-size: 4px 4px;
+      mix-blend-mode: multiply;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .display { font-family: Fraunces, Georgia, serif; letter-spacing: -0.045em; line-height: 0.96; }
+    .display em { font-style: normal; }
+    .eyebrow { color: var(--amber); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .muted { color: var(--muted); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fffaf0; background: var(--teal); box-shadow: var(--shadow); }
+    .btn-ghost { background: rgba(255, 253, 248, 0.74); border-color: var(--border); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(248, 243, 231, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; line-height: 1; }
+    .brand-logo { width: 210px; max-width: 48vw; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-item { position: relative; }
+    .nav-links a, .nav-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 0.85rem; border: 0; border-radius: 999px; color: rgba(18, 48, 57, 0.72); background: transparent; font-size: 0.92rem; font-weight: 700; cursor: pointer; }
+    .nav-links a:hover, .nav-dropdown-toggle:hover, .nav-item.open .nav-dropdown-toggle, .nav-item:hover .nav-dropdown-toggle, .nav-item:focus-within .nav-dropdown-toggle { color: var(--ink); background: rgba(255, 253, 248, 0.82); }
+    .nav-dropdown { position: absolute; left: 0; top: 100%; z-index: 30; display: none; min-width: 290px; padding: 0.45rem; border: 1px solid var(--border); border-radius: 18px; background: rgba(255, 253, 248, 0.96); box-shadow: var(--shadow); }
+    .nav-item.open .nav-dropdown, .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display: grid; gap: 0.2rem; }
+    .nav-dropdown a { justify-content: flex-start; width: 100%; border-radius: 14px; white-space: nowrap; }
+    .menu-button { display: none; border: 1px solid var(--border); border-radius: 14px; padding: 0.65rem 0.8rem; color: var(--ink); background: var(--paper); font-weight: 800; }
+
+    .hero { overflow: hidden; padding: 72px 0 36px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr); align-items: end; gap: 56px; }
+    .pill { display: inline-flex; align-items: center; gap: 0.55rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 0.8rem; color: rgba(18, 48, 57, 0.8); background: rgba(255, 253, 248, 0.76); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    h1 { margin: 1.1rem 0 0; font-size: clamp(3.4rem, 8vw, 7.2rem); }
+    h1 em, h2 em { color: inherit; font-style: normal; }
+    .lead { max-width: 640px; margin: 1.35rem 0 0; color: var(--muted); font-size: clamp(1.04rem, 2vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.1rem; }
+
+    .hero-card {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid rgba(18, 48, 57, 0.12);
+      border-radius: 34px;
+      background: linear-gradient(135deg, #fffdf8, #efe2c4);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      z-index: -1;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(23, 76, 85, 0.98), rgba(15, 52, 58, 0.78)),
+        url("ss/Image 1 of current website.png") center / cover;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .hero-card::after { content: ""; position: absolute; right: -60px; top: 70px; width: 190px; height: 190px; border: 34px solid rgba(217, 162, 59, 0.8); border-radius: 50%; }
+    .quote { position: absolute; left: 28px; right: 28px; bottom: 28px; padding: 1.5rem; border-radius: 24px; color: #fffaf0; background: linear-gradient(180deg, rgba(18, 48, 57, 0.12), rgba(18, 48, 57, 0.82)); backdrop-filter: blur(6px); }
+    .quote strong { display: block; font-family: Arial, Helvetica, sans-serif; font-size: 2rem; line-height: 1.05; }
+
+    .marquee { margin-top: 64px; overflow: hidden; border-block: 1px solid var(--border); background: rgba(255, 253, 248, 0.52); }
+    .marquee-track { display: flex; width: max-content; gap: 2.5rem; padding: 1.1rem 0; animation: scroll 34s linear infinite; font-family: Arial, Helvetica, sans-serif; color: rgba(18, 48, 57, 0.58); font-size: clamp(1.5rem, 3vw, 2.2rem); white-space: nowrap; }
+    .marquee span::after { content: "*"; color: var(--amber); margin-left: 2.5rem; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    section { padding: 96px 0; }
+    .section-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+    h2 { margin: 0.7rem 0 0; font-size: clamp(2.55rem, 5vw, 5rem); }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(255, 253, 248, 0.8); box-shadow: 0 18px 42px rgba(18, 48, 57, 0.06); transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(23, 76, 85, 0.42); box-shadow: var(--shadow); }
+    .icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 16px; color: var(--teal); background: rgba(217, 162, 59, 0.2); font-size: 1.25rem; font-weight: 900; }
+    .card h3 { margin: 1.1rem 0 0.35rem; font-family: Arial, Helvetica, sans-serif; font-size: 1.7rem; line-height: 1.1; }
+
+    .stats { padding: 72px 0; color: #fffaf0; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+    .stat-value { color: var(--amber-soft); font-family: Arial, Helvetica, sans-serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; }
+    .stat-label { margin-top: 0.8rem; color: rgba(255, 250, 240, 0.68); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    .programmes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+    .programme-card { min-height: 270px; display: flex; flex-direction: column; }
+    .programme-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .programme-meta span:first-child { color: var(--amber); }
+    .programme-card p { flex: 1; }
+    .arrow { color: var(--amber); font-size: 1.35rem; font-weight: 900; }
+
+    .about-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; margin-top: 34px; }
+    .image-panel { min-height: 420px; border-radius: 30px; background: linear-gradient(180deg, rgba(23, 76, 85, 0.24), rgba(23, 76, 85, 0.86)), url("ss/Image 2 of current website.png") center / cover; box-shadow: var(--shadow); }
+    .pillar-list { display: grid; gap: 12px; }
+    .pillar-item { position: relative; display: flex; align-items: flex-start; gap: 1rem; min-height: 86px; padding: 1.1rem 1.25rem; border: 1px solid var(--border); border-radius: 20px; background: rgba(255, 253, 248, 0.88); box-shadow: 0 14px 34px rgba(18,48,57,0.05); cursor: default; overflow: hidden; transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease, background 200ms ease; }
+    .pillar-item::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--amber); transform: scaleY(0); transform-origin: bottom; transition: transform 200ms ease; }
+    .pillar-item:hover, .pillar-item:focus-visible { transform: translateX(8px); border-color: rgba(23,76,85,0.34); background: var(--paper); box-shadow: 0 22px 52px rgba(18,48,57,0.14); outline: none; }
+    .pillar-item:hover::before, .pillar-item:focus-visible::before { transform: scaleY(1); }
+    .pillar-item strong { display: block; color: var(--ink); font-size: 1.05rem; line-height: 1.25; }
+    .pillar-item p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+    .number { flex: 0 0 auto; color: var(--amber); font-family: Arial, Helvetica, sans-serif; font-size: 2rem; line-height: 1; transition: transform 200ms ease, color 200ms ease; }
+    .pillar-item:hover .number, .pillar-item:focus-visible .number { color: var(--teal); transform: scale(1.08); }
+
+    .contact { padding-bottom: 0; }
+    .contact-box { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 28px; margin-top: 34px; }
+    .contact-list { display: grid; gap: 16px; }
+    .contact-item { padding: 1.2rem; border-bottom: 1px solid var(--border); }
+    .contact-item strong { display: block; margin-top: 0.25rem; font-family: Arial, Helvetica, sans-serif; font-size: 1.45rem; line-height: 1.15; }
+    form { display: grid; gap: 16px; padding: 1.6rem; border: 1px solid var(--border); border-radius: 28px; background: rgba(255, 253, 248, 0.84); box-shadow: 0 18px 42px rgba(18, 48, 57, 0.06); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    label { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+    input, textarea { width: 100%; margin-top: 0.45rem; padding: 0.95rem 1rem; border: 1px solid var(--border); border-radius: 16px; color: var(--ink); background: rgba(255, 255, 255, 0.72); outline: none; }
+    input:focus, textarea:focus { border-color: rgba(23, 76, 85, 0.55); box-shadow: 0 0 0 4px rgba(23, 76, 85, 0.12); }
+
+    .site-footer { margin-top: 96px; color: #fffaf0; background: linear-gradient(135deg, var(--teal-dark), var(--teal)); }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.55fr) minmax(180px, 0.55fr); gap: 46px; padding: 70px 0; }
+    .footer-title { font-family: Arial, Helvetica, sans-serif; font-size: clamp(2.3rem, 5vw, 4.4rem); letter-spacing: 0; line-height: 1; }
+    .footer-links { display: contents; }
+    .footer-links h4 { margin: 0 0 1.1rem; color: var(--amber-soft); font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-links p, .footer-links a { display: block; margin: 0.8rem 0; color: rgba(255, 250, 240, 0.72); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 800; }
+    .copyright { display: flex; justify-content: space-between; gap: 1rem; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255, 250, 240, 0.62); font-size: 0.78rem; }
+
+    .reveal { opacity: 0; transform: translateY(20px); animation: reveal 780ms cubic-bezier(.2,.8,.2,1) forwards; }
+    .delay-1 { animation-delay: 120ms; }
+    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      .hero-grid, .section-grid, .about-panel, .contact-box, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .hero-card { min-height: 430px; }
+      .programmes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .menu-button { display: inline-flex; }
+      .nav-links { position: absolute; inset: 72px 14px auto; display: none; flex-direction: column; align-items: stretch; padding: 0.8rem; border: 1px solid var(--border); border-radius: 22px; background: rgba(255, 253, 248, 0.96); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a, .nav-dropdown-toggle { justify-content: flex-start; width: 100%; padding: 0.9rem 1rem; }
+      .nav-item { width: 100%; }
+      .nav-dropdown { position: static; min-width: 0; margin: 0.2rem 0 0.35rem; box-shadow: none; }
+      .nav-cta { display: none; }
+      h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+      section { padding: 70px 0; }
+      .cards, .programmes-grid, .form-grid, .footer-links { grid-template-columns: 1fr; }
+      .copyright { flex-direction: column; }
+    }
+      .nav-links a.active, .nav-dropdown-toggle.active { color: var(--ink); background: rgba(255, 253, 248, 0.92); }
+    .page-intro { padding-top: 82px; padding-bottom: 34px; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; margin-top: 34px; }
+    .about-intro-grid { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(360px, 0.74fr); gap: 48px; align-items: center; }
+    .about-intro-copy { max-width: 680px; }
+    .about-intro-copy .lead { max-width: 620px; }
+    .about-facts { display: grid; gap: 14px; }
+    .about-fact { padding: 1.25rem; border: 1px solid var(--border); border-radius: 22px; background: rgba(255,253,248,0.84); box-shadow: 0 18px 42px rgba(18,48,57,0.06); }
+    .about-fact strong { display: block; margin-top: 0.3rem; color: var(--teal); font-size: clamp(1.55rem, 3vw, 2.2rem); line-height: 1.05; }
+    .about-fact p { margin: 0.45rem 0 0; color: var(--muted); }
+    .about-hero-image { width: min(100%, 680px); overflow: hidden; align-self: center; justify-self: end; border: 1px solid var(--border); border-radius: 24px; background: rgba(255,253,248,0.86); box-shadow: 0 18px 46px rgba(18,48,57,0.14); transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+    .about-hero-image img { width: 100%; height: clamp(220px, 22vw, 280px); object-fit: cover; object-position: center; display: block; transition: transform 420ms ease, filter 220ms ease; }
+    .about-hero-image:hover, .about-hero-image:focus-visible { transform: translateY(-8px); border-color: rgba(23,76,85,0.36); box-shadow: 0 30px 76px rgba(18,48,57,0.18); outline: none; }
+    .about-hero-image:hover img, .about-hero-image:focus-visible img { transform: scale(1.035); filter: saturate(1.06) contrast(1.03); }
+    .story-card { position: relative; min-height: 220px; padding: 1.9rem; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(255,253,248,0.88); box-shadow: 0 18px 42px rgba(18,48,57,0.06); overflow: hidden; transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; }
+    .story-card::after { content: ""; position: absolute; right: 1.25rem; bottom: 1.25rem; width: 42px; height: 42px; border: 1px solid rgba(217,162,59,0.34); border-radius: 50%; background: rgba(244,217,150,0.22); opacity: 0; transform: translateY(8px) scale(0.92); transition: opacity 220ms ease, transform 220ms ease; }
+    .story-card:hover, .story-card:focus-visible { transform: translateY(-8px); border-color: rgba(23,76,85,0.34); background: var(--paper); box-shadow: 0 26px 64px rgba(18,48,57,0.15); outline: none; }
+    .story-card:hover::after, .story-card:focus-visible::after { opacity: 1; transform: translateY(0) scale(1); }
+    .story-card h3 { margin-top: 0; }
+    .story-card p { max-width: 95%; }
+    .affiliation-list { display: grid; gap: 0.7rem; margin: 1.2rem 0 0; padding: 0; list-style: none; color: var(--muted); }
+    .affiliation-list li { position: relative; padding: 0.8rem 0.95rem 0.8rem 2.1rem; border: 1px solid rgba(18,48,57,0.10); border-radius: 16px; background: rgba(255,253,248,0.72); font-weight: 700; line-height: 1.35; transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; }
+    .affiliation-list li::before { content: ""; position: absolute; left: 0.95rem; top: 1.28rem; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+    .affiliation-list li:hover { transform: translateX(4px); border-color: rgba(217,162,59,0.42); background: var(--paper); }
+    .image-card { overflow: hidden; padding: 0; }
+    .image-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .logo-card img { width: 100%; max-height: 260px; object-fit: contain; padding: 1.5rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 32px; }
+    .value-tile { position: relative; min-height: 300px; padding: 1.6rem; border: 1px solid rgba(18,48,57,0.12); border-radius: 26px; color: var(--ink); background: linear-gradient(180deg, rgba(255,253,248,0.98), rgba(248,243,231,0.92)); box-shadow: 0 18px 42px rgba(18,48,57,0.10); transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease; }
+    .value-tile::before { content: ""; position: absolute; left: 1.45rem; top: 1.2rem; width: 42px; height: 4px; border-radius: 999px; background: var(--amber); transition: width 220ms ease; }
+    .value-tile:hover { transform: translateY(-8px); border-color: rgba(23,76,85,0.36); background: var(--paper); box-shadow: 0 28px 64px rgba(18,48,57,0.17); }
+    .value-tile:hover::before { width: calc(100% - 2.9rem); }
+    .value-body { padding-top: 1.35rem; }
+    .value-body strong { display: block; margin-bottom: 0.7rem; font-family: Arial, Helvetica, sans-serif; font-size: 1.75rem; line-height: 1; color: var(--teal); letter-spacing: 0; }
+    .value-body p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+    .partner-list { display: grid; gap: 12px; margin-top: 24px; }
+    .partner-item { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,253,248,0.8); }
+    .contact-note { padding: 1.4rem; border-radius: 24px; color: #fffaf0; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
+    @media (max-width: 900px) { .about-intro-grid, .story-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .values-grid { grid-template-columns: 1fr; } }
+      /* Consistent site typography */
+    h1, h2, h3, h4, h5, h6,
+    .display,
+    .footer-title,
+    .quote strong,
+    .moment-caption strong,
+    .value-body strong,
+    .route-point strong,
+    .route-badge strong {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 24px !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0 !important;
+    }
+
+    p,
+    .lead,
+    .article-body p,
+    .article-preview p,
+    .summary-card p,
+    .story-card p,
+    .value-body p,
+    .pillar-item p,
+    .footer-links p {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 20px !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0 !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+    }
+    b,
+    strong {
+      font-size: 20px !important;
+      line-height: inherit !important;
+    }
+
+    .value-body strong {
+      font-size: 24px !important;
+    }
+
+    .value-body p {
+      font-size: 18px !important;
+      line-height: 1.55 !important;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Finwin Edu Campus home">
+        <img class="brand-logo" src="https://finwincampus.com/wp-content/uploads/2024/01/image-1.png" alt="Finwin Edu Campus">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <div class="nav-item has-dropdown"><button class="nav-dropdown-toggle" id="programmesToggle" type="button" aria-expanded="false">Programmes</button><div class="nav-dropdown" aria-label="Programmes submenu"><a href="iic.html">IIC University of Technology</a><a href="tvec.html">TVEC</a><a href="qualifi.html">Qualifi</a><a href="aureus.html">Aureus University School of Medicine</a><a href="finwin-courses.html">FINWIN Courses</a></div></div>
+        <a href="articles.html">News And Articles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="contact.html">Apply now -&gt;</a>
+      <button class="menu-button" id="menuButton" type="button" aria-controls="navLinks" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+  <main>
+    <section class="page-intro" id="about">
+      <div class="container about-intro-grid">
+        <div class="about-intro-copy"><div class="eyebrow">About Finwin Campus</div><h2 class="display">Expanding knowledge.<br><em>Inspiring innovation.</em></h2><p class="lead">Finwin Edu Campus was registered on 23rd September 2019 and officially inaugurated on 4th February 2021 at No. 1094, Maradana Road, Borella, Colombo 08, Sri Lanka.</p></div>
+        <div class="about-hero-image" tabindex="0">
+          <img src="ss/about/convocation-wide-group.jpeg" alt="Finwin Edu Campus Annual Convocation 2025 graduates celebrating together">
+        </div>
+      </div>
+      <div class="container story-grid">
+        <article class="story-card" tabindex="0"><h3>Our Beginning</h3><p class="muted">Since its inception, the campus has remained dedicated to delivering uncompromised quality in education, ensuring that every student receives an academic experience of international standards.</p></article>
+        <article class="story-card" tabindex="0">
+          <h3>Our Affiliations</h3>
+          <ul class="affiliation-list" aria-label="Finwin Edu Campus affiliations">
+            <li>IIC University of Technology (Cambodia)</li>
+            <li>Tertiary and Vocational Education Commission (TVEC) of Sri Lanka</li>
+            <li>Qualifi (United Kingdom)</li>
+            <li>Aureus University School of Medicine</li>
+            <li>Lanka Hospitals</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="container section-grid">
+        <div><div class="eyebrow">Grow up with Finwin Edu Campus</div><h2 class="display">Four pillars.<br>One quality framework.</h2><p class="muted">Our guiding principle, "Quality Uncompromised," is reinforced by the four pillars of our quality framework.</p></div>
+        <div class="pillar-list">
+          <div class="pillar-item" tabindex="0"><span class="number">01</span><div><strong>Upholding accreditation standards</strong><p>Keeping programmes aligned with recognised academic and professional requirements.</p></div></div>
+          <div class="pillar-item" tabindex="0"><span class="number">02</span><div><strong>Ensuring timely delivery of the academic process</strong><p>Supporting students through organised teaching, assessment, and academic schedules.</p></div></div>
+          <div class="pillar-item" tabindex="0"><span class="number">03</span><div><strong>Fostering continuous improvement</strong><p>Reviewing feedback and outcomes so learning quality keeps improving over time.</p></div></div>
+          <div class="pillar-item" tabindex="0"><span class="number">04</span><div><strong>Building and sustaining stakeholders' trust</strong><p>Maintaining transparent, dependable relationships with students, partners, and communities.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="eyebrow">Our Values</div><h2 class="display">Passion. Accountability. Diligence. Innovation. Fairness.</h2>
+        <div class="values-grid">
+          <article class="value-tile">
+            <div class="value-body">
+              <strong>Passion</strong>
+              <p>We work with energy and care, aiming to delight our students, partners, and community through quality education.</p>
+            </div>
+          </article>
+          <article class="value-tile">
+            <div class="value-body">
+              <strong>Accountability</strong>
+              <p>We value reliability, personal responsibility, and the ability of staff and the organization to honor commitments.</p>
+            </div>
+          </article>
+          <article class="value-tile">
+            <div class="value-body">
+              <strong>Diligence</strong>
+              <p>We stay productive, self-motivated, and committed to completing work efficiently while serving students well.</p>
+            </div>
+          </article>
+          <article class="value-tile">
+            <div class="value-body">
+              <strong>Innovation</strong>
+              <p>We address development issues by looking beyond the obvious, experimenting thoughtfully, and stimulating creativity.</p>
+            </div>
+          </article>
+          <article class="value-tile">
+            <div class="value-body">
+              <strong>Fairness</strong>
+              <p>We make decisions with moral care, equity, and respect for the consequences our actions have on others.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="stats" aria-label="Campus statistics">
+      <div class="container stats-grid">
+        <div><div class="stat-value">2019</div><div class="stat-label">Registered in Sri Lanka</div></div>
+        <div><div class="stat-value">2021</div><div class="stat-label">Officially inaugurated</div></div>
+        <div><div class="stat-value">4</div><div class="stat-label">Quality framework pillars</div></div>
+        <div><div class="stat-value">3+</div><div class="stat-label">Academic affiliations</div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="footer-title">Quality <em style="color:var(--amber-soft); font-style:normal;">uncompromised.</em><br>Futures unlocked.</div><p style="color:rgba(255,250,240,0.72); max-width:460px;">Finwin Edu Campus - accredited excellence in higher learning, based in Sri Lanka with global pathways.</p><a class="btn" style="background:var(--amber-soft); color:var(--teal-dark);" href="contact.html">Start your application -&gt;</a></div>
+      <div class="footer-links">
+        <div class="footer-segment"><h4>Quick Links</h4><a href="https://studyportal.finwincampus.ae/learn/account/signin">Student Portal</a><a href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=Finwin+Edu+Campus,+No.+1094,+Maradana+Road,+Borella,+Colombo+08,+Sri+Lanka&travelmode=driving">Map</a><a href="https://www.finwin.education/">Finwin Campus - UAE</a></div><div class="footer-segment"><h4>Social Media</h4><a href="https://www.facebook.com/share/17UNkwbhQN/?mibextid=wwXIfr">Facebook</a><a href="https://www.linkedin.com/company/finwin-edu-campus/">LinkedIn</a><a href="https://www.instagram.com/finwin_edu_campus?igsh=MTAyZTY0bmh5MDd4eA==">Instagram</a></div>
+      </div>
+    </div>
+    <div class="container copyright"><span>&copy; <span id="year"></span> Finwin Edu Campus. All rights reserved.</span><span>Copyright www.finwincampus.com</span></div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    const programmeDropdown = document.querySelector('.has-dropdown');
+    const programmeToggle = document.getElementById('programmesToggle');
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+    if (programmeDropdown && programmeToggle) {
+      programmeToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = programmeDropdown.classList.toggle('open');
+        programmeToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (event) => {
+        if (!programmeDropdown.contains(event.target)) {
+          programmeDropdown.classList.remove('open');
+          programmeToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    if (menuButton && navLinks) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.textContent = isOpen ? 'Close' : 'Menu';
+      });
+      navLinks.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+          if (programmeDropdown && programmeToggle) {
+            programmeDropdown.classList.remove('open');
+            programmeToggle.setAttribute('aria-expanded', 'false');
+          }
+          navLinks.classList.remove('open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.textContent = 'Menu';
+        }
+      });
+    }
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    if (contactForm && submitButton) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        submitButton.textContent = "Sent - we'll be in touch";
+        submitButton.disabled = true;
+      });
+    }
+  </script>
+</body>
+</html>
