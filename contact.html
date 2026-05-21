@@ -229,8 +229,67 @@
     .contact-note { padding: 1.4rem; border-radius: 24px; color: #fffaf0; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
     .contact-note h3 { margin: 0 0 1rem; color: #fffaf0; font-size: 24px !important; line-height: 1.35 !important; }
     .contact-note p { margin: 0; color: #fffaf0; font-size: 20px !important; line-height: 1.6 !important; font-weight: 400; }
+    .open-hours {
+      display: grid;
+      gap: 10px;
+      margin: 1rem 0;
+    }
+    .hours-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      border-radius: 18px;
+      background: rgba(255, 253, 248, 0.08);
+      cursor: default;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+    .hours-row:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244, 217, 150, 0.58);
+      background: rgba(255, 253, 248, 0.14);
+      box-shadow: 0 16px 34px rgba(5, 28, 32, 0.28);
+    }
+    .hours-row:hover span {
+      color: #fffaf0;
+    }
+    .hours-row:hover strong {
+      color: #ffe7a8;
+    }
+    .hours-row span {
+      color: rgba(255, 250, 240, 0.74);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .hours-row strong {
+      color: var(--amber-soft);
+      font-size: 1rem !important;
+      line-height: 1.2 !important;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .contact-note .admissions-summary {
+      color: rgba(255, 250, 240, 0.82);
+      font-size: 1rem !important;
+      line-height: 1.55 !important;
+    }
     @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 720px) { .gallery-grid, .values-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) {
+      .hours-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hours-row strong {
+        text-align: left;
+        white-space: normal;
+      }
+    }
       /* Consistent site typography */
     h1, h2, h3, h4, h5, h6,
     .display,
@@ -299,7 +358,17 @@
             <div class="contact-item"><span class="eyebrow">Email</span><strong><a href="mailto:info@finwincampus.com">info@finwincampus.com</a></strong></div>
             <div class="contact-note">
               <h3>Open days and admissions</h3>
-              <p>Speak to the admissions team about undergraduate admissions, graduate admissions, continuing education, student portal access, and programme pathways.</p>
+              <div class="open-hours" aria-label="Open days and admissions hours">
+                <div class="hours-row">
+                  <span>Monday to Friday</span>
+                  <strong>9.30 a.m. - 4.30 p.m.</strong>
+                </div>
+                <div class="hours-row">
+                  <span>Saturday</span>
+                  <strong>9.30 a.m. - 2.00 p.m.</strong>
+                </div>
+              </div>
+              <p class="admissions-summary">Speak to the admissions team about undergraduate admissions, graduate admissions, continuing education, student portal access, and programme pathways.</p>
             </div>
           </aside>
           <form id="contactForm" action="mailto:shakeem@finwingroup.com,rishard@finwingroup.com" method="post" enctype="text/plain" data-recipients="shakeem@finwingroup.com,rishard@finwingroup.com">
