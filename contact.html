@@ -167,6 +167,11 @@
     .number { color: var(--amber); font-family: Arial, Helvetica, sans-serif; font-size: 2rem; line-height: 1; }
 
     .contact { padding-bottom: 0; }
+    .contact > .container > .eyebrow,
+    .contact > .container > h2,
+    .contact > .container > .lead {
+      margin-left: 1.2rem;
+    }
     .contact-box { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 28px; margin-top: 34px; }
     .contact-list { display: grid; gap: 16px; }
     .contact-item { padding: 1.2rem; border-bottom: 1px solid var(--border); }
@@ -326,6 +331,33 @@
     strong {
       font-size: 20px !important;
       line-height: inherit !important;
+    }
+    /* Justified text spacing polish */
+    p,
+    .lead,
+    .article-body p,
+    .article-preview p,
+    .summary-card p,
+    .story-card p,
+    .value-body p,
+    .pillar-item p,
+    .footer-links p,
+    li {
+      word-spacing: -0.12em !important;
+      letter-spacing: 0 !important;
+      text-align-last: left !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .eyebrow,
+    .pill,
+    label,
+    .stat-label,
+    .programme-meta,
+    .module-meta,
+    .footer-links h4 {
+      letter-spacing: 0.08em !important;
     }
   </style>
 </head>
