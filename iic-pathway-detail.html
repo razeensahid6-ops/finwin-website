@@ -55,6 +55,7 @@
     .nav-links { display: flex; align-items: center; gap: 0.35rem; }
     .nav-links a { padding: 0.65rem 0.85rem; border-radius: 999px; color: rgba(18,48,57,0.72); font-size: 0.92rem; font-weight: 700; }
     .nav-links a:hover, .nav-links a.active { color: var(--ink); background: rgba(255,253,248,0.86); }
+    .nav-cta { flex: 0 0 auto; }
 
     main { padding: 82px 0 0; }
     .detail-hero { display: grid; grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1.12fr); gap: 34px; align-items: stretch; }
@@ -82,6 +83,7 @@
     @media (max-width: 720px) {
       .container { width: min(100% - 28px, 1180px); }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
       main { padding-top: 56px; }
       .copyright { flex-direction: column; }
     }
@@ -150,6 +152,7 @@
         <a href="articles.html">News And Articles</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <a class="btn btn-primary nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfQmOVMqgEKwftKmSa6eyyG3tU0hhSJYcILOOF7B1l-j61KZg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Apply Now -&gt;</a>
     </div>
   </header>
 
@@ -162,7 +165,7 @@
           <h1 id="pageTitle">IIC Pathway Details</h1>
           <p class="lead" id="pageLead">Explore the pathway details, learning focus, and career direction for this IIC University of Technology programme.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="contact.html">Apply now -&gt;</a>
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfQmOVMqgEKwftKmSa6eyyG3tU0hhSJYcILOOF7B1l-j61KZg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Apply Now -&gt;</a>
             <a class="btn btn-ghost" href="iic.html">View all IIC programmes</a>
           </div>
         </div>
