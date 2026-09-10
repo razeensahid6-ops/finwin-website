@@ -26,6 +26,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    .pathway-card[id] { scroll-margin-top: 120px; }
 
     body {
       margin: 0;
@@ -334,6 +335,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="nav-item has-dropdown"><button class="nav-dropdown-toggle active" id="programmesToggle" type="button" aria-expanded="false">Programmes</button><div class="nav-dropdown" aria-label="Programmes submenu"><a href="iic.html">IIC University of Technology</a><a href="tvec.html">TVEC</a><a href="qualifi.html">Qualifi</a><a href="aureus.html">Aureus University School of Medicine</a><a href="finwin-courses.html">FINWIN Courses</a></div></div>
+        <a href="lecturer-panel.html">Academic Staff</a>
         <a href="articles.html">News And Articles</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -347,7 +349,7 @@
         <h2 class="display">Choose your <em>academic pathway.</em></h2>
         <p class="lead">Explore Finwin Edu Campus programmes through IIC University of Technology, TVEC, Qualifi, Aureus University School of Medicine, and FINWIN short course pathways.</p>
         <div class="pathway-grid">
-          <article class="card pathway-card">
+          <article class="card pathway-card" id="iic">
             <div>
               <div class="eyebrow">IIC University</div>
               <h3>IIC degree pathways</h3>
@@ -357,7 +359,7 @@
               <a class="btn btn-primary" href="iic.html">View IIC programmes -&gt;</a>
             </div>
           </article>
-          <article class="card pathway-card">
+          <article class="card pathway-card" id="tvec">
             <div>
               <div class="eyebrow">TVEC Sri Lanka</div>
               <h3>TVEC pathways</h3>
@@ -367,7 +369,7 @@
               <a class="btn btn-primary" href="tvec.html">View TVEC pathway -&gt;</a>
             </div>
           </article>
-          <article class="card pathway-card">
+          <article class="card pathway-card" id="qualifi">
             <div>
               <div class="eyebrow">UK-regulated qualifications</div>
               <h3>Qualifi pathways</h3>
@@ -377,7 +379,7 @@
               <a class="btn btn-primary" href="qualifi.html">View Qualifi pathway -&gt;</a>
             </div>
           </article>
-          <article class="card pathway-card">
+          <article class="card pathway-card" id="aureus">
             <div>
               <div class="eyebrow">Medical pathway</div>
               <h3>Aureus School of Medicine</h3>

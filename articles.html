@@ -26,6 +26,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    .article-preview[id] { scroll-margin-top: 120px; }
 
     body {
       margin: 0;
@@ -345,6 +346,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="nav-item has-dropdown"><button class="nav-dropdown-toggle" id="programmesToggle" type="button" aria-expanded="false">Programmes</button><div class="nav-dropdown" aria-label="Programmes submenu"><a href="iic.html">IIC University of Technology</a><a href="tvec.html">TVEC</a><a href="qualifi.html">Qualifi</a><a href="aureus.html">Aureus University School of Medicine</a><a href="finwin-courses.html">FINWIN Courses</a></div></div>
+        <a href="lecturer-panel.html">Academic Staff</a>
         <a href="articles.html" class="active">News And Articles</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -359,6 +361,26 @@
         <p class="lead">A quick look at Finwin Edu Campus updates. Tap an article to read the full story.</p>
 
         <div class="article-list">
+          <a class="article-preview" id="phsrc" href="article-phsrc-approved-private-medical-institution.html" aria-label="Read more about Finwin Edu Campus becoming an approved Private Medical Institution">
+            <img src="ss/articles/phsrc-accreditation/accreditation-preview.svg" alt="Finwin Edu Campus approved Private Medical Institution accreditation">
+            <div class="article-preview-body">
+              <div class="eyebrow">Official accreditation</div>
+              <h3>Approved Private Medical Institution</h3>
+              <p class="muted">Finwin Edu Campus has received PHSRC approval from the Ministry of Health to establish and operate its dedicated Nursing Training School.</p>
+              <span class="btn btn-primary">Read more -&gt;</span>
+            </div>
+          </a>
+
+          <a class="article-preview" id="prithipura-community" href="article-prithipura-community-mou.html" aria-label="Read more about the Finwin and Prithipura Community partnership">
+            <img src="ss/articles/prithipura-community/mou-signing.jpeg" alt="Finwin Edu Campus and Prithipura Community MoU signing">
+            <div class="article-preview-body">
+              <div class="eyebrow">Special needs care partnership</div>
+              <h3>Finwin Partners with Prithipura Community</h3>
+              <p class="muted">A new MoU gives Caregiver and Nursing Assistant students 192 hours of supervised, hands-on experience supporting individuals with special needs.</p>
+              <span class="btn btn-primary">Read more -&gt;</span>
+            </div>
+          </a>
+
           <a class="article-preview" href="article-finwin-convocation-2025.html" aria-label="Read more about Finwin Convocation 2025">
             <img src="ss/articles/finwin-convocation-seated-2025.jpeg" alt="Finwin Edu Campus Annual Convocation 2025 graduates seated at the ceremony">
             <div class="article-preview-body">
@@ -399,7 +421,7 @@
             </div>
           </a>
 
-          <a class="article-preview" href="article-lanka-hospital.html" aria-label="Read more about Finwin Edu Campus and Lanka Hospitals">
+          <a class="article-preview" id="lanka-hospitals" href="article-lanka-hospital.html" aria-label="Read more about Finwin Edu Campus and Lanka Hospitals">
             <img src="ss/articles/lanka-hospital-logo.png" alt="Lanka Hospitals">
             <div class="article-preview-body">
               <div class="eyebrow">Healthcare partnership</div>

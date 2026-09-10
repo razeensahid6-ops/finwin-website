@@ -238,8 +238,16 @@
     .story-card:hover::after, .story-card:focus-visible::after { opacity: 1; transform: translateY(0) scale(1); }
     .story-card h3 { margin-top: 0; }
     .story-card p { max-width: 95%; }
+    .lecturer-panel-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: center; margin-top: 28px; padding: 1.45rem 1.6rem; border: 1px solid rgba(217,162,59,0.42); border-radius: 22px; background: linear-gradient(135deg, rgba(244,217,150,0.28), rgba(255,253,248,0.92)); box-shadow: 0 14px 36px rgba(18,48,57,0.08); transition: transform 180ms ease, box-shadow 180ms ease; }
+    .lecturer-panel-link:hover { transform: translateY(-4px); box-shadow: 0 22px 48px rgba(18,48,57,0.13); }
+    .lecturer-panel-link h3 { margin: 0.35rem 0 0; }
+    .lecturer-panel-link span { color: var(--teal); font-weight: 800; white-space: nowrap; }
     .affiliation-list { display: grid; gap: 0.7rem; margin: 1.2rem 0 0; padding: 0; list-style: none; color: var(--muted); }
     .affiliation-list li { position: relative; padding: 0.8rem 0.95rem 0.8rem 2.1rem; border: 1px solid rgba(18,48,57,0.10); border-radius: 16px; background: rgba(255,253,248,0.72); font-weight: 700; line-height: 1.35; transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; }
+    .affiliation-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+    .affiliation-list li > span { flex: 1 1 240px; }
+    .affiliation-list .collaboration-link { flex: 0 0 auto; min-height: 44px; padding: 0.6rem 0.85rem; font-size: 0.8rem; box-shadow: none; }
+    .collaboration-link:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
     .affiliation-list li::before { content: ""; position: absolute; left: 0.95rem; top: 1.28rem; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
     .affiliation-list li:hover { transform: translateX(4px); border-color: rgba(217,162,59,0.42); background: var(--paper); }
     .image-card { overflow: hidden; padding: 0; }
@@ -257,7 +265,7 @@
     .partner-item { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,253,248,0.8); }
     .contact-note { padding: 1.4rem; border-radius: 24px; color: #fffaf0; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
     @media (max-width: 900px) { .about-intro-grid, .story-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 720px) { .values-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .values-grid { grid-template-columns: 1fr; } .lecturer-panel-link { grid-template-columns: 1fr; } .lecturer-panel-link span { white-space: normal; } }
       /* Consistent site typography */
     h1, h2, h3, h4, h5, h6,
     .display,
@@ -343,6 +351,7 @@
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <div class="nav-item has-dropdown"><button class="nav-dropdown-toggle" id="programmesToggle" type="button" aria-expanded="false">Programmes</button><div class="nav-dropdown" aria-label="Programmes submenu"><a href="iic.html">IIC University of Technology</a><a href="tvec.html">TVEC</a><a href="qualifi.html">Qualifi</a><a href="aureus.html">Aureus University School of Medicine</a><a href="finwin-courses.html">FINWIN Courses</a></div></div>
+        <a href="lecturer-panel.html">Academic Staff</a>
         <a href="articles.html">News And Articles</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -360,15 +369,23 @@
       <div class="container story-grid">
         <article class="story-card" tabindex="0"><h3>Our Beginning</h3><p class="muted">Since its inception, the campus has remained dedicated to delivering uncompromised quality in education, ensuring that every student receives an academic experience of international standards.</p></article>
         <article class="story-card" tabindex="0">
-          <h3>Our Affiliations</h3>
+          <h3>Our Collaborations</h3>
           <ul class="affiliation-list" aria-label="Finwin Edu Campus affiliations">
-            <li>IIC University of Technology (Cambodia)</li>
-            <li>Tertiary and Vocational Education Commission (TVEC) of Sri Lanka</li>
-            <li>Qualifi (United Kingdom)</li>
-            <li>Aureus University School of Medicine</li>
-            <li>Lanka Hospitals</li>
+            <li><span>IIC University of Technology (Cambodia)</span><a class="btn btn-primary collaboration-link" href="iic.html" aria-label="View programmes for IIC University of Technology (Cambodia)">View programmes &rarr;</a></li>
+            <li><span>Tertiary and Vocational Education Commission (TVEC) of Sri Lanka</span><a class="btn btn-primary collaboration-link" href="tvec.html" aria-label="View programmes for Tertiary and Vocational Education Commission (TVEC) of Sri Lanka">View programmes &rarr;</a></li>
+            <li><span>Qualifi (United Kingdom)</span><a class="btn btn-primary collaboration-link" href="qualifi.html" aria-label="View programmes for Qualifi (United Kingdom)">View programmes &rarr;</a></li>
+            <li><span>Aureus University School of Medicine</span><a class="btn btn-primary collaboration-link" href="aureus.html" aria-label="View programmes for Aureus University School of Medicine">View programmes &rarr;</a></li>
+            <li><span>Lanka Hospitals</span><a class="btn btn-primary collaboration-link" href="article-lanka-hospital.html" aria-label="View article for Lanka Hospitals">View article &rarr;</a></li>
+            <li><span>Prithipura Community</span><a class="btn btn-primary collaboration-link" href="article-prithipura-community-mou.html" aria-label="View article for Prithipura Community">View article &rarr;</a></li>
+            <li><span>Private Health Services Regulatory Council (PHSRC)</span><a class="btn btn-primary collaboration-link" href="article-phsrc-approved-private-medical-institution.html" aria-label="View article for Private Health Services Regulatory Council (PHSRC)">View article &rarr;</a></li>
           </ul>
         </article>
+      </div>
+      <div class="container">
+        <a class="lecturer-panel-link" href="lecturer-panel.html" aria-label="Explore the Finwin Edu Campus academic staff">
+          <div><div class="eyebrow">Our academic community</div><h3>Meet the people who guide every learning journey.</h3></div>
+          <span>Explore our academic staff -&gt;</span>
+        </a>
       </div>
     </section>
     <section>

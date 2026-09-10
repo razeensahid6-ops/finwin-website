@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approved Private Medical Institution | Finwin Edu Campus</title>
+  <meta name="description" content="Finwin Edu Campus is accredited by the Private Health Services Regulatory Council as an approved Private Medical Institution for its Nursing Training School.">
+  <style>
+    :root {
+           --cream: #f8f3e7;
+      --paper: #fffdf8;
+      --ink: #123039;
+      --muted: #647477;
+      --teal: #174c55;
+      --teal-dark: #0f343a;
+      --amber: #d9a23b;
+      --amber-soft: #f4d996;
+      --border: rgba(18, 48, 57, 0.14);
+      --shadow: 0 28px 72px rgba(23, 76, 85, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 8%, rgba(217, 162, 59, 0.2), transparent 28rem),
+        radial-gradient(circle at 92% 18%, rgba(23, 76, 85, 0.14), transparent 32rem),
+        var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { max-width: 100%; }
+    p { margin: 0; text-align: justify; text-align-last: left; text-justify: inter-word; word-spacing: -0.12em; hyphens: auto; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { color: var(--amber); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.2rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fffaf0; background: var(--teal); box-shadow: 0 14px 30px rgba(23, 76, 85, 0.2); }
+    .btn-light { color: var(--teal-dark); border-color: rgba(255,255,255,0.3); background: #fffdf8; }
+    .btn-ghost { border-color: var(--border); background: rgba(255,253,248,0.76); }
+
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border); background: rgba(248,243,231,0.82); backdrop-filter: blur(16px); }
+    .nav-wrap { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; }
+    .brand-logo { width: 220px; max-width: 48vw; height: 66px; object-fit: contain; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.35rem; }
+    .nav-item { position: relative; }
+    .nav-links a, .nav-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 0.85rem; border: 0; border-radius: 999px; color: rgba(18,48,57,0.72); background: transparent; font-size: 0.92rem; font-weight: 700; cursor: pointer; }
+    .nav-links a:hover, .nav-dropdown-toggle:hover, .nav-item.open .nav-dropdown-toggle, .nav-item:hover .nav-dropdown-toggle, .nav-item:focus-within .nav-dropdown-toggle, .nav-links a.active { color: var(--ink); background: rgba(255,253,248,0.84); }
+    .nav-dropdown { position: absolute; left: 0; top: 100%; z-index: 30; display: none; min-width: 290px; padding: 0.45rem; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,253,248,0.98); box-shadow: var(--shadow); }
+    .nav-item.open .nav-dropdown, .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display: grid; gap: 0.2rem; }
+    .nav-dropdown a { justify-content: flex-start; width: 100%; border-radius: 14px; white-space: nowrap; }
+    .menu-button { display: none; border: 1px solid var(--border); border-radius: 14px; padding: 0.65rem 0.8rem; color: var(--ink); background: var(--paper); font-weight: 800; }
+
+    .accreditation-hero { padding: 38px 0 68px; }
+    .back-link { margin-bottom: 22px; }
+    .hero-panel { position: relative; display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; overflow: hidden; padding: clamp(1.5rem, 4vw, 3.5rem); border-radius: 32px; color: #fffaf0; background: linear-gradient(145deg, var(--teal-dark), var(--teal)); box-shadow: var(--shadow); }
+    .hero-panel::before { content: ""; position: absolute; width: 430px; height: 430px; right: -170px; top: -190px; border: 1px solid rgba(244,217,150,0.16); border-radius: 50%; }
+    .hero-copy { position: relative; z-index: 1; }
+    .hero-copy h1 { margin: 0.85rem 0 1rem; }
+    .hero-copy p { color: rgba(255,250,240,0.76); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
+    .hero-art { position: relative; z-index: 1; padding: 10px; border: 1px solid rgba(255,255,255,0.16); border-radius: 24px; background: rgba(255,255,255,0.07); }
+    .hero-art img { width: 100%; display: block; border-radius: 18px; }
+
+    .credential-strip { position: relative; z-index: 2; margin-top: -34px; }
+    .credential-grid { display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: var(--paper); box-shadow: 0 16px 38px rgba(18,48,57,0.1); }
+    .credential { padding: 1.3rem 1.4rem; }
+    .credential + .credential { border-left: 1px solid var(--border); }
+    .credential strong { display: block; margin-top: 0.25rem; }
+
+    .story-section { padding: 92px 0 82px; }
+    .story-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+    .article-body { max-width: 800px; }
+    .article-body h2 { margin: 0.65rem 0 1.35rem; }
+    .article-body p { margin: 0 0 1.2rem; color: var(--muted); }
+    .article-body .closing { margin-top: 1.7rem; padding-top: 1.2rem; border-top: 1px solid rgba(217,162,59,0.72); color: var(--teal); font-weight: 700; }
+
+    .milestone-section { padding: 78px 0; color: #fffaf0; background: var(--teal-dark); }
+    .milestone-heading { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 2.5rem; align-items: end; margin-bottom: 30px; }
+    .milestone-heading h2 { margin: 0.55rem 0 0; }
+    .milestone-heading p { color: rgba(255,250,240,0.7); }
+    .milestone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .milestone { min-height: 185px; padding: 1.3rem; border: 1px solid rgba(244,217,150,0.4); border-radius: 22px; background: transparent; }
+    .milestone span { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 1.35rem; border: 1px solid rgba(244,217,150,0.68); border-radius: 50%; color: var(--amber-soft); font-size: 0.75rem; font-weight: 800; }
+    .milestone p { margin-top: 0.35rem; color: rgba(255,250,240,0.68); text-align: left; word-spacing: normal; }
+
+    .document-section { padding: 86px 0; }
+    .document-heading { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: end; margin-bottom: 26px; }
+    .document-heading h2 { margin: 0.55rem 0 0; }
+    .document-frame { width: min(720px, 100%); margin: 0 auto; overflow: hidden; padding: 12px; border: 1px solid var(--border); border-radius: 24px; background: var(--paper); box-shadow: var(--shadow); }
+    .document-frame img { width: 100%; height: auto; display: block; border-radius: 14px; background: #ececec; }
+
+    .site-footer { color: #fffaf0; background: linear-gradient(135deg, var(--teal-dark), var(--teal)); }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.55fr) minmax(180px, 0.55fr); gap: 46px; padding: 70px 0; }
+    .footer-title { font-weight: 800; }
+    .footer-links { display: contents; }
+    .footer-links h4 { margin: 0 0 1.1rem; color: var(--amber-soft); font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-links p, .footer-links a { display: block; margin: 0.8rem 0; color: rgba(255,250,240,0.72); font-size: clamp(1.15rem,2vw,1.35rem); font-weight: 800; }
+    .copyright { display: flex; justify-content: space-between; gap: 1rem; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255,250,240,0.62); font-size: 0.78rem; }
+
+    @media (max-width: 900px) {
+      .hero-panel, .story-layout, .milestone-heading, .footer-grid { grid-template-columns: 1fr; }
+      .hero-art { max-width: 620px; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .menu-button { display: inline-flex; }
+      .nav-links { position: absolute; inset: 72px 14px auto; display: none; flex-direction: column; align-items: stretch; padding: 0.8rem; border: 1px solid var(--border); border-radius: 22px; background: rgba(255,253,248,0.98); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a, .nav-dropdown-toggle { justify-content: flex-start; width: 100%; padding: 0.9rem 1rem; }
+      .nav-item { width: 100%; }
+      .nav-dropdown { position: static; min-width: 0; margin-top: 0.2rem; box-shadow: none; }
+      .accreditation-hero { padding: 24px 0 48px; }
+      .hero-panel { padding: 1.25rem; border-radius: 24px; }
+      .hero-actions { display: grid; }
+      .hero-actions .btn { width: 100%; }
+      .credential-strip { margin-top: 16px; }
+      .credential-grid, .milestone-grid, .document-heading { grid-template-columns: 1fr; }
+      .credential + .credential { border-left: 0; border-top: 1px solid var(--border); }
+      .story-section, .milestone-section, .document-section { padding: 62px 0; }
+      .document-heading .btn { width: 100%; }
+      .document-frame { padding: 7px; }
+      .copyright { flex-direction: column; }
+    }
+
+    /* Consistent site typography */
+    h1, h2, h3, h4, h5, h6,
+    .footer-title {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 24px !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0 !important;
+    }
+    p,
+    li {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 20px !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0 !important;
+    }
+    b,
+    strong {
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 20px !important;
+      line-height: inherit !important;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Finwin Edu Campus home"><img class="brand-logo" src="ss/finwin-header-logo.png" alt="Finwin Edu Campus"></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-item has-dropdown">
+          <button class="nav-dropdown-toggle" id="programmesToggle" type="button" aria-expanded="false">Programmes</button>
+          <div class="nav-dropdown" aria-label="Programmes submenu">
+            <a href="iic.html">IIC University of Technology</a>
+            <a href="tvec.html">TVEC</a>
+            <a href="qualifi.html">Qualifi</a>
+            <a href="aureus.html">Aureus University School of Medicine</a>
+            <a href="finwin-courses.html">FINWIN Courses</a>
+          </div>
+        </div>
+        <a href="lecturer-panel.html">Academic Staff</a>
+        <a href="articles.html" class="active">News And Articles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-button" id="menuButton" type="button" aria-controls="navLinks" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="accreditation-hero">
+      <div class="container">
+        <a class="btn btn-ghost back-link" href="articles.html">&larr; Back to articles</a>
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <div class="eyebrow">Official announcement</div>
+            <h1>Finwin Edu Campus Accredited as an Approved Private Medical Institution</h1>
+            <p>Official approval from the Private Health Services Regulatory Council of the Ministry of Health authorises the establishment and operation of our dedicated Nursing Training School.</p>
+            <div class="hero-actions">
+              <a class="btn btn-light" href="#announcement">Read announcement &rarr;</a>
+              <a class="btn btn-ghost" href="ss/articles/phsrc-accreditation/finwin-phsrc-approval.pdf" target="_blank" rel="noopener">View certificate</a>
+            </div>
+          </div>
+          <div class="hero-art"><img src="ss/articles/phsrc-accreditation/accreditation-preview.svg" alt="Approved Private Medical Institution accreditation announcement"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="credential-strip">
+      <div class="container">
+        <div class="credential-grid" aria-label="Accreditation details">
+          <div class="credential"><div class="eyebrow">Registration</div><strong>PHSCH/OMI/626</strong></div>
+          <div class="credential"><div class="eyebrow">Regulatory authority</div><strong>PHSRC, Ministry of Health</strong></div>
+          <div class="credential"><div class="eyebrow">Approved operation</div><strong>Nursing Training School</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="story-section" id="announcement">
+      <div class="container story-layout">
+        <article class="article-body">
+          <div class="eyebrow">A milestone in healthcare education</div>
+          <h2>Official Announcement</h2>
+          <p>Finwin Edu Campus is proud to announce its official certification as a Private Medical Institution, approved by the Private Health Services Regulatory Council (PHSRC) of the Ministry of Health, under registration number PHSCH/OMI/626. This accreditation has been formally granted for the establishment and operation of our dedicated Nursing Training School.</p>
+          <p>This milestone reflects our unwavering commitment to academic excellence, rigorous quality assurance, and adherence to national healthcare standards. By securing this approval, Finwin Edu Campus is authorised to deliver professional nursing training programmes designed to cultivate highly skilled, compassionate, and competent healthcare professionals ready to meet modern medical demands.</p>
+          <p>We extend our sincere gratitude to the Ministry of Health and the PHSRC for their guidance throughout this rigorous evaluation process. This certification marks a monumental step forward in our mission to expand our healthcare education portfolio and shape the future of medical training.</p>
+          <p class="closing">We look forward to welcoming our inaugural cohort of nursing students and empowering the next generation of healthcare leaders.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="milestone-section">
+      <div class="container">
+        <div class="milestone-heading">
+          <div><div class="eyebrow">What this approval represents</div><h2>A stronger foundation for nursing education.</h2></div>
+          <p>This accreditation reinforces the standards, accountability, and professional focus behind Finwin Edu Campus healthcare training.</p>
+        </div>
+        <div class="milestone-grid">
+          <article class="milestone"><span>01</span><h3>National Standards</h3><p>Training delivery aligned with the expectations of Sri Lanka's healthcare regulatory framework.</p></article>
+          <article class="milestone"><span>02</span><h3>Quality Assurance</h3><p>A continued commitment to structured teaching, oversight, and dependable academic processes.</p></article>
+          <article class="milestone"><span>03</span><h3>Future Healthcare Leaders</h3><p>A dedicated pathway for developing capable, compassionate, and work-ready nursing professionals.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="document-section">
+      <div class="container">
+        <div class="document-heading">
+          <div><div class="eyebrow">Official document</div><h2>Certificate of Approval</h2></div>
+          <a class="btn btn-primary" href="ss/articles/phsrc-accreditation/finwin-phsrc-approval.pdf" target="_blank" rel="noopener">Open certificate &rarr;</a>
+        </div>
+        <div class="document-frame">
+          <img src="ss/articles/phsrc-accreditation/certificate-portrait.jpeg" alt="Finwin Edu Campus Certificate of Registration from the Private Health Services Regulatory Council" width="2550" height="4200" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="footer-title">Quality <em style="color:var(--amber-soft); font-style:normal;">uncompromised.</em><br>Futures unlocked.</div><p style="color:rgba(255,250,240,0.72); max-width:460px;">Finwin Edu Campus - accredited excellence in higher learning, based in Sri Lanka with global pathways.</p></div>
+      <div class="footer-links">
+        <div><h4>Quick Links</h4><a href="https://studyportal.finwincampus.ae/learn/account/signin">Student Portal</a><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Current+Location&amp;destination=Finwin+Edu+Campus,+No.+1094,+Maradana+Road,+Borella,+Colombo+08,+Sri+Lanka&amp;travelmode=driving">Map</a><a href="https://www.finwin.education/">Finwin Campus - UAE</a></div>
+        <div><h4>Social Media</h4><a href="https://www.facebook.com/share/17UNkwbhQN/?mibextid=wwXIfr">Facebook</a><a href="https://www.linkedin.com/company/finwin-edu-campus/">LinkedIn</a><a href="https://www.instagram.com/finwin_edu_campus?igsh=MTAyZTY0bmh5MDd4eA==">Instagram</a></div>
+      </div>
+    </div>
+    <div class="container copyright"><span>&copy; <span id="year"></span> Finwin Edu Campus. All rights reserved.</span><span>Copyright www.finwincampus.com</span></div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    const programmeDropdown = document.querySelector('.has-dropdown');
+    const programmeToggle = document.getElementById('programmesToggle');
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+    if (programmeDropdown && programmeToggle) {
+      programmeToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = programmeDropdown.classList.toggle('open');
+        programmeToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (event) => {
+        if (!programmeDropdown.contains(event.target)) {
+          programmeDropdown.classList.remove('open');
+          programmeToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    if (menuButton && navLinks) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.textContent = isOpen ? 'Close' : 'Menu';
+      });
+      navLinks.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+          navLinks.classList.remove('open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.textContent = 'Menu';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
