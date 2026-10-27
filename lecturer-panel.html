@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,9 +109,8 @@
     }
     .staff-card::before { content: ""; position: absolute; inset: 0 0 auto; z-index: 2; height: 4px; background: linear-gradient(90deg, var(--amber), var(--amber-soft), transparent 88%); }
     .staff-card:hover { transform: translateY(-5px); border-color: rgba(217, 162, 59, 0.48); box-shadow: 0 22px 48px rgba(23, 76, 85, 0.16); }
-    .staff-photo { margin: 0; height: 240px; overflow: hidden; background: #d9eef8; }
-    .staff-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
-    .staff-photo img.full-portrait { object-fit: contain; object-position: center; background: #d9eef8; }
+    .staff-photo { margin: 0; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #d9eef8; }
+    .staff-photo img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
     .staff-details { display: flex; flex: 1; flex-direction: column; justify-content: flex-start; padding: 1.15rem; }
     .staff-label { color: var(--amber); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
     .staff-details h2 { margin: 0.4rem 0 0.85rem; font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 1.35; }
@@ -143,7 +143,6 @@
       .page-title { padding: 40px 0 48px; }
       .staff-grid { grid-template-columns: minmax(0, 400px); justify-content: center; }
       .staff-card:last-child:nth-child(odd) { grid-column: auto; width: 100%; }
-      .staff-photo { min-height: 0; height: 250px; }
       .staff-details { padding: 1rem; }
       .copyright { flex-direction: column; }
     }
@@ -206,13 +205,80 @@
           </article>
           <article class="staff-card">
             <figure class="staff-photo">
-              <img class="full-portrait" src="ss/academic-staff/ms-sinthuja-rasathurai.jpeg" alt="Ms. Sinthuja Rasathurai" width="166" height="175">
+              <img src="ss/academic-staff/ms-sinthuja-rasathurai.png" alt="Ms. Sinthuja Rasathurai" width="1254" height="1254">
             </figure>
             <div class="staff-details">
               <div class="staff-label">Visiting Lecturer</div>
               <h2>Ms. Sinthuja Rasathurai</h2>
               <ul class="qualification-list" aria-label="Qualifications">
                 <li>B.Sc (Hons) Nursing &ndash; University of Peradeniya, Sri Lanka</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo">
+              <img src="ss/academic-staff/mr-usama-jiffry.png" alt="Mr. Usama Jiffry" width="1254" height="1254">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Academic Staff</div>
+              <h2>Mr. Usama Jiffry</h2>
+              <ul class="qualification-list" aria-label="Qualifications and professional role">
+                <li>CFA, MBA, ACMA (UK), CGMA, SCAV (Stern,NYU)</li>
+                <li>Independent Consultant Investment Banking.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo">
+              <img src="ss/academic-staff/mr-udara-rajapkse.png" alt="Mr. Udara Rajapkse" width="1254" height="1254">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Academic Staff</div>
+              <h2>Mr. Udara Rajapkse</h2>
+              <ul class="qualification-list" aria-label="Qualifications and professional role">
+                <li>Senior QA Lead</li>
+                <li>B.Sc. (Hons) Information Technology.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo">
+              <img src="ss/academic-staff/ms-thameema-khiard.png" alt="Ms. Thameema Khiard" width="1254" height="1254">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Academic Staff</div>
+              <h2>Ms. Thameema Khiard</h2>
+              <ul class="qualification-list" aria-label="Qualifications">
+                <li>Bachelor of Early Childhood Education<br>Lincoln University &mdash; Malaysia.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo">
+              <img src="ss/academic-staff/mr-inthikab-zufer.png" alt="Mr. Inthikab Zufer" width="1254" height="1254">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Academic Staff</div>
+              <h2>Mr. Inthikab Zufer</h2>
+              <ul class="qualification-list" aria-label="Qualifications and professional roles">
+                <li>Business &amp; Marketing Consultant | Academic &amp; Corporate Lecturer | Ph.D. Student</li>
+                <li>Doctorate (Ph.D.) Aldersgate College, Philippines | Ongoing</li>
+                <li>MBA &ndash; University of Wales, Cardiff &ndash; UK</li>
+                <li>Professional Postgraduate Diploma in Marketing<br>Chartered Institute of Marketing (CIM)</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo">
+              <img src="ss/academic-staff/mr-jason-samuel.png" alt="Mr. Jason Samuel" width="1254" height="1254">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Academic Staff</div>
+              <h2>Mr. Jason Samuel</h2>
+              <ul class="qualification-list" aria-label="Qualifications and professional role">
+                <li>Lecturer and Marketing Professional</li>
+                <li>Master of Business Administration &ndash; Queen Margaret University (UK)</li>
+                <li>B.A. in Business Management and Marketing, University of Greenwich (London).</li>
               </ul>
             </div>
           </article>
