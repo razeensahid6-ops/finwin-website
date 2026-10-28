@@ -87,7 +87,7 @@
       padding: 50px 0 60px;
       text-align: center;
     }
-    .page-title h1 {
+    .page-title h1, .section-title {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 24px;
@@ -95,6 +95,8 @@
       letter-spacing: 0;
     }
     .staff-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1080px; margin: 24px auto 0; }
+    .staff-grid--academic { grid-template-columns: repeat(2, minmax(0, 349px)); justify-content: center; }
+    .page-title + .page-title { padding-top: 0; }
     .staff-card {
       position: relative;
       display: flex;
@@ -111,6 +113,7 @@
     .staff-card:hover { transform: translateY(-5px); border-color: rgba(217, 162, 59, 0.48); box-shadow: 0 22px 48px rgba(23, 76, 85, 0.16); }
     .staff-photo { margin: 0; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #d9eef8; }
     .staff-photo img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
+    .staff-photo--portrait { background: #fff; }
     .staff-details { display: flex; flex: 1; flex-direction: column; justify-content: flex-start; padding: 1.15rem; }
     .staff-label { color: var(--amber); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
     .staff-details h2 { margin: 0.4rem 0 0.85rem; font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 1.35; }
@@ -174,13 +177,13 @@
   </header>
 
   <main>
-    <section class="page-title">
+    <section class="page-title" aria-labelledby="academic-staff-title">
       <div class="container">
-        <h1>Academic Staff</h1>
-        <div class="staff-grid">
+        <h1 id="academic-staff-title">Academic Staff</h1>
+        <div class="staff-grid staff-grid--academic">
           <article class="staff-card">
-            <figure class="staff-photo">
-              <img src="ss/academic-staff/mr-rishard-fallil.jpeg" alt="Mr. M. Rishard Fallil" width="1090" height="1173">
+            <figure class="staff-photo staff-photo--portrait">
+              <img src="ss/academic-staff/mr-rishard-fallil.png" alt="Mr. M. Rishard Fallil" width="1172" height="1342">
             </figure>
             <div class="staff-details">
               <div class="staff-label">Academic Staff</div>
@@ -192,8 +195,8 @@
             </div>
           </article>
           <article class="staff-card">
-            <figure class="staff-photo">
-              <img src="ss/academic-staff/ms-anugi-yehansa-senevirathna.jpeg" alt="Ms. Anugi Yehansa Senevirathna" width="1600" height="1455">
+            <figure class="staff-photo staff-photo--portrait">
+              <img src="ss/academic-staff/ms-anugi-yehansa-senevirathna.png" alt="Ms. Anugi Yehansa Senevirathna" width="1105" height="1423">
             </figure>
             <div class="staff-details">
               <div class="staff-label">Academic Staff</div>
@@ -203,6 +206,14 @@
               </ul>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-title" aria-labelledby="visiting-lecturers-title">
+      <div class="container">
+        <h2 class="section-title" id="visiting-lecturers-title">Visiting Lecturers</h2>
+        <div class="staff-grid">
           <article class="staff-card">
             <figure class="staff-photo">
               <img src="ss/academic-staff/ms-sinthuja-rasathurai.png" alt="Ms. Sinthuja Rasathurai" width="1254" height="1254">
@@ -220,7 +231,7 @@
               <img src="ss/academic-staff/mr-usama-jiffry.png" alt="Mr. Usama Jiffry" width="1254" height="1254">
             </figure>
             <div class="staff-details">
-              <div class="staff-label">Academic Staff</div>
+              <div class="staff-label">Visiting Lecturer</div>
               <h2>Mr. Usama Jiffry</h2>
               <ul class="qualification-list" aria-label="Qualifications and professional role">
                 <li>CFA, MBA, ACMA (UK), CGMA, SCAV (Stern,NYU)</li>
@@ -233,7 +244,7 @@
               <img src="ss/academic-staff/mr-udara-rajapkse.png" alt="Mr. Udara Rajapkse" width="1254" height="1254">
             </figure>
             <div class="staff-details">
-              <div class="staff-label">Academic Staff</div>
+              <div class="staff-label">Visiting Lecturer</div>
               <h2>Mr. Udara Rajapkse</h2>
               <ul class="qualification-list" aria-label="Qualifications and professional role">
                 <li>Senior QA Lead</li>
@@ -242,11 +253,24 @@
             </div>
           </article>
           <article class="staff-card">
+            <figure class="staff-photo staff-photo--portrait">
+              <img src="ss/academic-staff/mr-tuan-wazeem-kitchilan.png" alt="Mr. Tuan Wazeem Kitchilan" width="1086" height="1448">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Visiting Lecturer</div>
+              <h2>Mr. Tuan Wazeem Kitchilan</h2>
+              <ul class="qualification-list" aria-label="Qualifications">
+                <li>MSc Data Science<br>Cardiff Metropolitan University, UK (via International College of Business and Technology &ndash; ICBT, Colombo)</li>
+                <li>BSc (Hons) in Software Engineering<br>Cardiff Metropolitan University, UK (via International College of Business and Technology &ndash; ICBT, Colombo)</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
             <figure class="staff-photo">
               <img src="ss/academic-staff/ms-thameema-khiard.png" alt="Ms. Thameema Khiard" width="1254" height="1254">
             </figure>
             <div class="staff-details">
-              <div class="staff-label">Academic Staff</div>
+              <div class="staff-label">Visiting Lecturer</div>
               <h2>Ms. Thameema Khiard</h2>
               <ul class="qualification-list" aria-label="Qualifications">
                 <li>Bachelor of Early Childhood Education<br>Lincoln University &mdash; Malaysia.</li>
@@ -258,7 +282,7 @@
               <img src="ss/academic-staff/mr-inthikab-zufer.png" alt="Mr. Inthikab Zufer" width="1254" height="1254">
             </figure>
             <div class="staff-details">
-              <div class="staff-label">Academic Staff</div>
+              <div class="staff-label">Visiting Lecturer</div>
               <h2>Mr. Inthikab Zufer</h2>
               <ul class="qualification-list" aria-label="Qualifications and professional roles">
                 <li>Business &amp; Marketing Consultant | Academic &amp; Corporate Lecturer | Ph.D. Student</li>
@@ -273,12 +297,26 @@
               <img src="ss/academic-staff/mr-jason-samuel.png" alt="Mr. Jason Samuel" width="1254" height="1254">
             </figure>
             <div class="staff-details">
-              <div class="staff-label">Academic Staff</div>
+              <div class="staff-label">Visiting Lecturer</div>
               <h2>Mr. Jason Samuel</h2>
               <ul class="qualification-list" aria-label="Qualifications and professional role">
                 <li>Lecturer and Marketing Professional</li>
                 <li>Master of Business Administration &ndash; Queen Margaret University (UK)</li>
                 <li>B.A. in Business Management and Marketing, University of Greenwich (London).</li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-card">
+            <figure class="staff-photo staff-photo--portrait">
+              <img src="ss/academic-staff/ms-aqeela-fallil.png" alt="Ms. Aqeela Fallil" width="1190" height="1322">
+            </figure>
+            <div class="staff-details">
+              <div class="staff-label">Visiting Lecturer</div>
+              <h2>Ms. Aqeela Fallil</h2>
+              <ul class="qualification-list" aria-label="Qualifications">
+                <li>Associate Teacher&rsquo;s Diploma in Speech &amp; Drama</li>
+                <li>M. Sc. Labour Relations &amp; Human Resource Management (MLRHRM)<br>University of Colombo, Sri Lanka</li>
+                <li>B.Sc. Business Management (HRM) (First Class Honours)</li>
               </ul>
             </div>
           </article>
